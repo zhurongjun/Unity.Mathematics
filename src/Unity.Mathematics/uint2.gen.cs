@@ -32,7 +32,6 @@ namespace Unity.Mathematics
         /// <summary>Constructs a uint2 vector from two uint values.</summary>
         /// <param name="x">The constructed vector's x component will be set to this value.</param>
         /// <param name="y">The constructed vector's y component will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(uint x, uint y)
         {
             this.x = x;
@@ -41,7 +40,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a uint2 vector.</summary>
         /// <param name="xy">The constructed vector's xy components will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(uint2 xy)
         {
             this.x = xy.x;
@@ -50,7 +48,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a single uint value by assigning it to every component.</summary>
         /// <param name="v">uint to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(uint v)
         {
             this.x = v;
@@ -59,7 +56,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a single bool value by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">bool to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(bool v)
         {
             this.x = v ? 1u : 0u;
@@ -68,7 +64,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a bool2 vector by componentwise conversion.</summary>
         /// <param name="v">bool2 to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(bool2 v)
         {
             this.x = v.x ? 1u : 0u;
@@ -77,7 +72,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a single int value by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">int to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(int v)
         {
             this.x = (uint)v;
@@ -86,7 +80,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a int2 vector by componentwise conversion.</summary>
         /// <param name="v">int2 to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(int2 v)
         {
             this.x = (uint)v.x;
@@ -95,7 +88,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a single float value by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">float to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(float v)
         {
             this.x = (uint)v;
@@ -104,7 +96,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a float2 vector by componentwise conversion.</summary>
         /// <param name="v">float2 to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(float2 v)
         {
             this.x = (uint)v.x;
@@ -113,7 +104,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a single double value by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">double to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(double v)
         {
             this.x = (uint)v;
@@ -122,7 +112,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a uint2 vector from a double2 vector by componentwise conversion.</summary>
         /// <param name="v">double2 to convert to uint2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(double2 v)
         {
             this.x = (uint)v.x;
@@ -133,55 +122,46 @@ namespace Unity.Mathematics
         /// <summary>Implicitly converts a single uint value to a uint2 vector by assigning it to every component.</summary>
         /// <param name="v">uint to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator uint2(uint v) { return new uint2(v); }
 
         /// <summary>Explicitly converts a single bool value to a uint2 vector by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">bool to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator uint2(bool v) { return new uint2(v); }
 
         /// <summary>Explicitly converts a bool2 vector to a uint2 vector by componentwise conversion.</summary>
         /// <param name="v">bool2 to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator uint2(bool2 v) { return new uint2(v); }
 
         /// <summary>Explicitly converts a single int value to a uint2 vector by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">int to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator uint2(int v) { return new uint2(v); }
 
         /// <summary>Explicitly converts a int2 vector to a uint2 vector by componentwise conversion.</summary>
         /// <param name="v">int2 to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator uint2(int2 v) { return new uint2(v); }
 
         /// <summary>Explicitly converts a single float value to a uint2 vector by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">float to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator uint2(float v) { return new uint2(v); }
 
         /// <summary>Explicitly converts a float2 vector to a uint2 vector by componentwise conversion.</summary>
         /// <param name="v">float2 to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator uint2(float2 v) { return new uint2(v); }
 
         /// <summary>Explicitly converts a single double value to a uint2 vector by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">double to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator uint2(double v) { return new uint2(v); }
 
         /// <summary>Explicitly converts a double2 vector to a uint2 vector by componentwise conversion.</summary>
         /// <param name="v">double2 to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator uint2(double2 v) { return new uint2(v); }
 
 
@@ -189,21 +169,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise multiplication.</param>
         /// <returns>uint2 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator * (uint2 lhs, uint2 rhs) { return new uint2 (lhs.x * rhs.x, lhs.y * rhs.y); }
 
         /// <summary>Returns the result of a componentwise multiplication operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise multiplication.</param>
         /// <returns>uint2 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator * (uint2 lhs, uint rhs) { return new uint2 (lhs.x * rhs, lhs.y * rhs); }
 
         /// <summary>Returns the result of a componentwise multiplication operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise multiplication.</param>
         /// <returns>uint2 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator * (uint lhs, uint2 rhs) { return new uint2 (lhs * rhs.x, lhs * rhs.y); }
 
 
@@ -211,21 +188,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise addition.</param>
         /// <returns>uint2 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator + (uint2 lhs, uint2 rhs) { return new uint2 (lhs.x + rhs.x, lhs.y + rhs.y); }
 
         /// <summary>Returns the result of a componentwise addition operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise addition.</param>
         /// <returns>uint2 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator + (uint2 lhs, uint rhs) { return new uint2 (lhs.x + rhs, lhs.y + rhs); }
 
         /// <summary>Returns the result of a componentwise addition operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise addition.</param>
         /// <returns>uint2 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator + (uint lhs, uint2 rhs) { return new uint2 (lhs + rhs.x, lhs + rhs.y); }
 
 
@@ -233,21 +207,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise subtraction.</param>
         /// <returns>uint2 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator - (uint2 lhs, uint2 rhs) { return new uint2 (lhs.x - rhs.x, lhs.y - rhs.y); }
 
         /// <summary>Returns the result of a componentwise subtraction operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise subtraction.</param>
         /// <returns>uint2 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator - (uint2 lhs, uint rhs) { return new uint2 (lhs.x - rhs, lhs.y - rhs); }
 
         /// <summary>Returns the result of a componentwise subtraction operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise subtraction.</param>
         /// <returns>uint2 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator - (uint lhs, uint2 rhs) { return new uint2 (lhs - rhs.x, lhs - rhs.y); }
 
 
@@ -255,21 +226,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise division.</param>
         /// <returns>uint2 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator / (uint2 lhs, uint2 rhs) { return new uint2 (lhs.x / rhs.x, lhs.y / rhs.y); }
 
         /// <summary>Returns the result of a componentwise division operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise division.</param>
         /// <returns>uint2 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator / (uint2 lhs, uint rhs) { return new uint2 (lhs.x / rhs, lhs.y / rhs); }
 
         /// <summary>Returns the result of a componentwise division operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise division.</param>
         /// <returns>uint2 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator / (uint lhs, uint2 rhs) { return new uint2 (lhs / rhs.x, lhs / rhs.y); }
 
 
@@ -277,35 +245,30 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise modulus.</param>
         /// <returns>uint2 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator % (uint2 lhs, uint2 rhs) { return new uint2 (lhs.x % rhs.x, lhs.y % rhs.y); }
 
         /// <summary>Returns the result of a componentwise modulus operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise modulus.</param>
         /// <returns>uint2 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator % (uint2 lhs, uint rhs) { return new uint2 (lhs.x % rhs, lhs.y % rhs); }
 
         /// <summary>Returns the result of a componentwise modulus operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise modulus.</param>
         /// <returns>uint2 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator % (uint lhs, uint2 rhs) { return new uint2 (lhs % rhs.x, lhs % rhs.y); }
 
 
         /// <summary>Returns the result of a componentwise increment operation on a uint2 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise increment.</param>
         /// <returns>uint2 result of the componentwise increment.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator ++ (uint2 val) { return new uint2 (++val.x, ++val.y); }
 
 
         /// <summary>Returns the result of a componentwise decrement operation on a uint2 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise decrement.</param>
         /// <returns>uint2 result of the componentwise decrement.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator -- (uint2 val) { return new uint2 (--val.x, --val.y); }
 
 
@@ -313,21 +276,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise less than.</param>
         /// <returns>bool2 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator < (uint2 lhs, uint2 rhs) { return new bool2 (lhs.x < rhs.x, lhs.y < rhs.y); }
 
         /// <summary>Returns the result of a componentwise less than operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise less than.</param>
         /// <returns>bool2 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator < (uint2 lhs, uint rhs) { return new bool2 (lhs.x < rhs, lhs.y < rhs); }
 
         /// <summary>Returns the result of a componentwise less than operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise less than.</param>
         /// <returns>bool2 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator < (uint lhs, uint2 rhs) { return new bool2 (lhs < rhs.x, lhs < rhs.y); }
 
 
@@ -335,21 +295,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise less or equal.</param>
         /// <returns>bool2 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator <= (uint2 lhs, uint2 rhs) { return new bool2 (lhs.x <= rhs.x, lhs.y <= rhs.y); }
 
         /// <summary>Returns the result of a componentwise less or equal operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise less or equal.</param>
         /// <returns>bool2 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator <= (uint2 lhs, uint rhs) { return new bool2 (lhs.x <= rhs, lhs.y <= rhs); }
 
         /// <summary>Returns the result of a componentwise less or equal operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise less or equal.</param>
         /// <returns>bool2 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator <= (uint lhs, uint2 rhs) { return new bool2 (lhs <= rhs.x, lhs <= rhs.y); }
 
 
@@ -357,21 +314,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise greater than.</param>
         /// <returns>bool2 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator > (uint2 lhs, uint2 rhs) { return new bool2 (lhs.x > rhs.x, lhs.y > rhs.y); }
 
         /// <summary>Returns the result of a componentwise greater than operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise greater than.</param>
         /// <returns>bool2 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator > (uint2 lhs, uint rhs) { return new bool2 (lhs.x > rhs, lhs.y > rhs); }
 
         /// <summary>Returns the result of a componentwise greater than operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise greater than.</param>
         /// <returns>bool2 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator > (uint lhs, uint2 rhs) { return new bool2 (lhs > rhs.x, lhs > rhs.y); }
 
 
@@ -379,35 +333,30 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise greater or equal.</param>
         /// <returns>bool2 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator >= (uint2 lhs, uint2 rhs) { return new bool2 (lhs.x >= rhs.x, lhs.y >= rhs.y); }
 
         /// <summary>Returns the result of a componentwise greater or equal operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise greater or equal.</param>
         /// <returns>bool2 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator >= (uint2 lhs, uint rhs) { return new bool2 (lhs.x >= rhs, lhs.y >= rhs); }
 
         /// <summary>Returns the result of a componentwise greater or equal operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise greater or equal.</param>
         /// <returns>bool2 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator >= (uint lhs, uint2 rhs) { return new bool2 (lhs >= rhs.x, lhs >= rhs.y); }
 
 
         /// <summary>Returns the result of a componentwise unary minus operation on a uint2 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise unary minus.</param>
         /// <returns>uint2 result of the componentwise unary minus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator - (uint2 val) { return new uint2 ((uint)-val.x, (uint)-val.y); }
 
 
         /// <summary>Returns the result of a componentwise unary plus operation on a uint2 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise unary plus.</param>
         /// <returns>uint2 result of the componentwise unary plus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator + (uint2 val) { return new uint2 (+val.x, +val.y); }
 
 
@@ -415,35 +364,30 @@ namespace Unity.Mathematics
         /// <param name="x">The vector to left shift.</param>
         /// <param name="n">The number of bits to left shift.</param>
         /// <returns>The result of the componentwise left shift.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator << (uint2 x, int n) { return new uint2 (x.x << n, x.y << n); }
 
         /// <summary>Returns the result of a componentwise right shift operation on a uint2 vector by a number of bits specified by a single int.</summary>
         /// <param name="x">The vector to right shift.</param>
         /// <param name="n">The number of bits to right shift.</param>
         /// <returns>The result of the componentwise right shift.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator >> (uint2 x, int n) { return new uint2 (x.x >> n, x.y >> n); }
 
         /// <summary>Returns the result of a componentwise equality operation on two uint2 vectors.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise equality.</param>
         /// <returns>bool2 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator == (uint2 lhs, uint2 rhs) { return new bool2 (lhs.x == rhs.x, lhs.y == rhs.y); }
 
         /// <summary>Returns the result of a componentwise equality operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise equality.</param>
         /// <returns>bool2 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator == (uint2 lhs, uint rhs) { return new bool2 (lhs.x == rhs, lhs.y == rhs); }
 
         /// <summary>Returns the result of a componentwise equality operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise equality.</param>
         /// <returns>bool2 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator == (uint lhs, uint2 rhs) { return new bool2 (lhs == rhs.x, lhs == rhs.y); }
 
 
@@ -451,28 +395,24 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise not equal.</param>
         /// <returns>bool2 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator != (uint2 lhs, uint2 rhs) { return new bool2 (lhs.x != rhs.x, lhs.y != rhs.y); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise not equal.</param>
         /// <returns>bool2 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator != (uint2 lhs, uint rhs) { return new bool2 (lhs.x != rhs, lhs.y != rhs); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise not equal.</param>
         /// <returns>bool2 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 operator != (uint lhs, uint2 rhs) { return new bool2 (lhs != rhs.x, lhs != rhs.y); }
 
 
         /// <summary>Returns the result of a componentwise bitwise not operation on a uint2 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise bitwise not.</param>
         /// <returns>uint2 result of the componentwise bitwise not.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator ~ (uint2 val) { return new uint2 (~val.x, ~val.y); }
 
 
@@ -480,21 +420,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise bitwise and.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise bitwise and.</param>
         /// <returns>uint2 result of the componentwise bitwise and.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator & (uint2 lhs, uint2 rhs) { return new uint2 (lhs.x & rhs.x, lhs.y & rhs.y); }
 
         /// <summary>Returns the result of a componentwise bitwise and operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise bitwise and.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise bitwise and.</param>
         /// <returns>uint2 result of the componentwise bitwise and.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator & (uint2 lhs, uint rhs) { return new uint2 (lhs.x & rhs, lhs.y & rhs); }
 
         /// <summary>Returns the result of a componentwise bitwise and operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise bitwise and.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise bitwise and.</param>
         /// <returns>uint2 result of the componentwise bitwise and.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator & (uint lhs, uint2 rhs) { return new uint2 (lhs & rhs.x, lhs & rhs.y); }
 
 
@@ -502,21 +439,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise bitwise or.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise bitwise or.</param>
         /// <returns>uint2 result of the componentwise bitwise or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator | (uint2 lhs, uint2 rhs) { return new uint2 (lhs.x | rhs.x, lhs.y | rhs.y); }
 
         /// <summary>Returns the result of a componentwise bitwise or operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise bitwise or.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise bitwise or.</param>
         /// <returns>uint2 result of the componentwise bitwise or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator | (uint2 lhs, uint rhs) { return new uint2 (lhs.x | rhs, lhs.y | rhs); }
 
         /// <summary>Returns the result of a componentwise bitwise or operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise bitwise or.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise bitwise or.</param>
         /// <returns>uint2 result of the componentwise bitwise or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator | (uint lhs, uint2 rhs) { return new uint2 (lhs | rhs.x, lhs | rhs.y); }
 
 
@@ -524,21 +458,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise bitwise exclusive or.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise bitwise exclusive or.</param>
         /// <returns>uint2 result of the componentwise bitwise exclusive or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator ^ (uint2 lhs, uint2 rhs) { return new uint2 (lhs.x ^ rhs.x, lhs.y ^ rhs.y); }
 
         /// <summary>Returns the result of a componentwise bitwise exclusive or operation on a uint2 vector and a uint value.</summary>
         /// <param name="lhs">Left hand side uint2 to use to compute componentwise bitwise exclusive or.</param>
         /// <param name="rhs">Right hand side uint to use to compute componentwise bitwise exclusive or.</param>
         /// <returns>uint2 result of the componentwise bitwise exclusive or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator ^ (uint2 lhs, uint rhs) { return new uint2 (lhs.x ^ rhs, lhs.y ^ rhs); }
 
         /// <summary>Returns the result of a componentwise bitwise exclusive or operation on a uint value and a uint2 vector.</summary>
         /// <param name="lhs">Left hand side uint to use to compute componentwise bitwise exclusive or.</param>
         /// <param name="rhs">Right hand side uint2 to use to compute componentwise bitwise exclusive or.</param>
         /// <returns>uint2 result of the componentwise bitwise exclusive or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 operator ^ (uint lhs, uint2 rhs) { return new uint2 (lhs ^ rhs.x, lhs ^ rhs.y); }
 
 
@@ -548,7 +479,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 xxxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(x, x, x, x); }
         }
 
@@ -557,7 +487,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 xxxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(x, x, x, y); }
         }
 
@@ -566,7 +495,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 xxyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(x, x, y, x); }
         }
 
@@ -575,7 +503,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 xxyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(x, x, y, y); }
         }
 
@@ -584,7 +511,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 xyxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(x, y, x, x); }
         }
 
@@ -593,7 +519,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 xyxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(x, y, x, y); }
         }
 
@@ -602,7 +527,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 xyyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(x, y, y, x); }
         }
 
@@ -611,7 +535,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 xyyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(x, y, y, y); }
         }
 
@@ -620,7 +543,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 yxxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(y, x, x, x); }
         }
 
@@ -629,7 +551,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 yxxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(y, x, x, y); }
         }
 
@@ -638,7 +559,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 yxyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(y, x, y, x); }
         }
 
@@ -647,7 +567,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 yxyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(y, x, y, y); }
         }
 
@@ -656,7 +575,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 yyxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(y, y, x, x); }
         }
 
@@ -665,7 +583,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 yyxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(y, y, x, y); }
         }
 
@@ -674,7 +591,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 yyyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(y, y, y, x); }
         }
 
@@ -683,7 +599,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint4 yyyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint4(y, y, y, y); }
         }
 
@@ -692,7 +607,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint3 xxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint3(x, x, x); }
         }
 
@@ -701,7 +615,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint3 xxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint3(x, x, y); }
         }
 
@@ -710,7 +623,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint3 xyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint3(x, y, x); }
         }
 
@@ -719,7 +631,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint3 xyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint3(x, y, y); }
         }
 
@@ -728,7 +639,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint3 yxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint3(y, x, x); }
         }
 
@@ -737,7 +647,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint3 yxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint3(y, x, y); }
         }
 
@@ -746,7 +655,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint3 yyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint3(y, y, x); }
         }
 
@@ -755,7 +663,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint3 yyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint3(y, y, y); }
         }
 
@@ -764,7 +671,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint2 xx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint2(x, x); }
         }
 
@@ -773,9 +679,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint2 xy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint2(x, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; y = value.y; }
         }
 
@@ -784,9 +688,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint2 yx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint2(y, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; x = value.y; }
         }
 
@@ -795,54 +697,30 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public uint2 yy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new uint2(y, y); }
         }
 
 
 
-        /// <summary>Returns the uint element at a specified index.</summary>
-        unsafe public uint this[int index]
-        {
-            get
-            {
-#if ENABLE_UNITY_COLLECTIONS_CHECKS
-                if ((uint)index >= 2)
-                    throw new System.ArgumentException("index must be between[0...1]");
-#endif
-                fixed (uint2* array = &this) { return ((uint*)array)[index]; }
-            }
-            set
-            {
-#if ENABLE_UNITY_COLLECTIONS_CHECKS
-                if ((uint)index >= 2)
-                    throw new System.ArgumentException("index must be between[0...1]");
-#endif
-                fixed (uint* array = &x) { array[index] = value; }
-            }
-        }
 
         /// <summary>Returns true if the uint2 is equal to a given uint2, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(uint2 rhs) { return x == rhs.x && y == rhs.y; }
 
         /// <summary>Returns true if the uint2 is equal to a given uint2, false otherwise.</summary>
         /// <param name="o">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        public override bool Equals(object o) { return o is uint2 converted && Equals(converted); }
+        public override bool Equals(object o) { return o is uint2 && Equals((uint2)o); }
 
 
         /// <summary>Returns a hash code for the uint2.</summary>
         /// <returns>The computed hash code.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() { return (int)math.hash(this); }
 
 
         /// <summary>Returns a string representation of the uint2.</summary>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()
         {
             return string.Format("uint2({0}, {1})", x, y);
@@ -852,7 +730,6 @@ namespace Unity.Mathematics
         /// <param name="format">Format string to use during string formatting.</param>
         /// <param name="formatProvider">Format provider to use during string formatting.</param>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return string.Format("uint2({0}, {1})", x.ToString(format, formatProvider), y.ToString(format, formatProvider));
@@ -877,73 +754,61 @@ namespace Unity.Mathematics
         /// <param name="x">The constructed vector's x component will be set to this value.</param>
         /// <param name="y">The constructed vector's y component will be set to this value.</param>
         /// <returns>uint2 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(uint x, uint y) { return new uint2(x, y); }
 
         /// <summary>Returns a uint2 vector constructed from a uint2 vector.</summary>
         /// <param name="xy">The constructed vector's xy components will be set to this value.</param>
         /// <returns>uint2 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(uint2 xy) { return new uint2(xy); }
 
         /// <summary>Returns a uint2 vector constructed from a single uint value by assigning it to every component.</summary>
         /// <param name="v">uint to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(uint v) { return new uint2(v); }
 
         /// <summary>Returns a uint2 vector constructed from a single bool value by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">bool to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(bool v) { return new uint2(v); }
 
         /// <summary>Return a uint2 vector constructed from a bool2 vector by componentwise conversion.</summary>
         /// <param name="v">bool2 to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(bool2 v) { return new uint2(v); }
 
         /// <summary>Returns a uint2 vector constructed from a single int value by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">int to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(int v) { return new uint2(v); }
 
         /// <summary>Return a uint2 vector constructed from a int2 vector by componentwise conversion.</summary>
         /// <param name="v">int2 to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(int2 v) { return new uint2(v); }
 
         /// <summary>Returns a uint2 vector constructed from a single float value by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">float to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(float v) { return new uint2(v); }
 
         /// <summary>Return a uint2 vector constructed from a float2 vector by componentwise conversion.</summary>
         /// <param name="v">float2 to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(float2 v) { return new uint2(v); }
 
         /// <summary>Returns a uint2 vector constructed from a single double value by converting it to uint and assigning it to every component.</summary>
         /// <param name="v">double to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(double v) { return new uint2(v); }
 
         /// <summary>Return a uint2 vector constructed from a double2 vector by componentwise conversion.</summary>
         /// <param name="v">double2 to convert to uint2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 uint2(double2 v) { return new uint2(v); }
 
         /// <summary>Returns a uint hash code of a uint2 vector.</summary>
         /// <param name="v">Vector value to hash.</param>
         /// <returns>uint hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint hash(uint2 v)
         {
             return csum(v * uint2(0x4473BBB1u, 0xCBA11D5Fu)) + 0x685835CFu;
@@ -956,7 +821,6 @@ namespace Unity.Mathematics
         /// </summary>
         /// <param name="v">Vector value to hash.</param>
         /// <returns>uint2 hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 hashwide(uint2 v)
         {
             return (v * uint2(0xC3D32AE1u, 0xB966942Fu)) + 0xFE9856B3u;
@@ -967,7 +831,6 @@ namespace Unity.Mathematics
         /// <param name="right">uint2 to use as the right argument of the shuffle operation.</param>
         /// <param name="x">The ShuffleComponent to use when setting the resulting uint.</param>
         /// <returns>uint result of the shuffle operation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint shuffle(uint2 left, uint2 right, ShuffleComponent x)
         {
             return select_shuffle_component(left, right, x);
@@ -979,7 +842,6 @@ namespace Unity.Mathematics
         /// <param name="x">The ShuffleComponent to use when setting the resulting uint2 x component.</param>
         /// <param name="y">The ShuffleComponent to use when setting the resulting uint2 y component.</param>
         /// <returns>uint2 result of the shuffle operation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 shuffle(uint2 left, uint2 right, ShuffleComponent x, ShuffleComponent y)
         {
             return uint2(
@@ -994,7 +856,6 @@ namespace Unity.Mathematics
         /// <param name="y">The ShuffleComponent to use when setting the resulting uint3 y component.</param>
         /// <param name="z">The ShuffleComponent to use when setting the resulting uint3 z component.</param>
         /// <returns>uint3 result of the shuffle operation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint3 shuffle(uint2 left, uint2 right, ShuffleComponent x, ShuffleComponent y, ShuffleComponent z)
         {
             return uint3(
@@ -1011,7 +872,6 @@ namespace Unity.Mathematics
         /// <param name="z">The ShuffleComponent to use when setting the resulting uint4 z component.</param>
         /// <param name="w">The ShuffleComponent to use when setting the resulting uint4 w component.</param>
         /// <returns>uint4 result of the shuffle operation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 shuffle(uint2 left, uint2 right, ShuffleComponent x, ShuffleComponent y, ShuffleComponent z, ShuffleComponent w)
         {
             return uint4(
@@ -1021,7 +881,6 @@ namespace Unity.Mathematics
                 select_shuffle_component(left, right, w));
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static uint select_shuffle_component(uint2 a, uint2 b, ShuffleComponent component)
         {
             switch(component)

@@ -406,7 +406,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
                 }
             }
 
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tpublic {0}({1} v)\n", m_TypeName, sourceType);
             str.Append("\t\t{\n");
             for(int i = 0; i < fieldCount; i++)
@@ -434,11 +434,11 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.Append("\t\t}\n\n");
 
             mathStr.Append("\t\t/// <returns>Converted value.</returns>\n");
-            mathStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // mathStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             mathStr.AppendFormat("\t\tpublic static {0} {0}({1} v) {{ return new {0}(v); }}\n\n", m_TypeName, sourceType);
 
             opStr.Append("\t\t/// <returns>Converted value.</returns>\n");
-            opStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // opStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             opStr.AppendFormat("\t\tpublic static {0} operator {1}({2} v) {{ return new {1}(v); }}\n\n", isExplicit ? "explicit" : "implicit", m_TypeName, sourceType);
         }
 
@@ -586,7 +586,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
 
 
             str.Append("\n");
-            GenerateIndexOperator(str, isMatrix ? IndexerMode.ByRef : IndexerMode.ByValue);
+            // GenerateIndexOperator(str, isMatrix ? IndexerMode.ByRef : IndexerMode.ByValue);
 
             str.Append("\n");
             GenerateEquals(str);
@@ -621,7 +621,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             if (m_Columns > 1)
                 return;
 
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tinternal static {0} select_shuffle_component({1} a, {1} b, ShuffleComponent component)\n", m_BaseType, m_TypeName);
             str.Append("\t\t{\n");
             str.Append("\t\t\tswitch(component)\n");
@@ -669,7 +669,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
                 }
 
                 str.AppendFormat($"\t\t/// <returns>{resultType} result of the shuffle operation.</returns>\n");
-                str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+                // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
                 str.AppendFormat("\t\tpublic static {0} shuffle({1} left, {2} right", resultType, m_TypeName, m_TypeName);
                 for(int i = 0; i < resultComponents; i++)
                 {
@@ -747,7 +747,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
 
             bool needsSwizzle = (resultRows != lhsRows);
 
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tpublic static {1} {0}({2} a, {3} b)\n", name, resultType, lhsType, rhsType);
             str.Append("\t\t{\n");
 
@@ -903,7 +903,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
                 componentIndex += paramComponents;
             }
 
-            constructorStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // constructorStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             constructorStr.Append("\t\tpublic ");
             constructorStr.Append(m_TypeName);
             constructorStr.Append("(");
@@ -921,7 +921,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             }
 
             mathStr.Append($"\t\t/// <returns>{m_TypeName} constructed from arguments.</returns>\n");
-            mathStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // mathStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             mathStr.Append("\t\tpublic static ");
             mathStr.Append(m_TypeName);
             mathStr.Append(" ");
@@ -1016,7 +1016,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
                 constructorStr.Append($"\t\t/// <param name=\"{matrixFields[col]}\">The matrix column {matrixFields[col]} will be set to this value.</param>\n");
             }
 
-            constructorStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // constructorStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             constructorStr.Append("\t\tpublic ");
             constructorStr.Append(m_TypeName);
             constructorStr.Append("(");
@@ -1029,7 +1029,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             }
 
             mathStr.Append($"\t\t/// <returns>{m_TypeName} constructed from arguments.</returns>\n");
-            mathStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // mathStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             mathStr.Append("\t\tpublic static ");
             mathStr.Append(m_TypeName);
             mathStr.Append(" ");
@@ -1092,7 +1092,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
                 }
             }
 
-            constructorStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // constructorStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             constructorStr.Append("\t\tpublic ");
             constructorStr.Append(m_TypeName);
             constructorStr.Append("(");
@@ -1107,7 +1107,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             }
 
             mathStr.Append($"\t\t/// <returns>{m_TypeName} constructed from arguments.</returns>\n");
-            mathStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // mathStr.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             mathStr.Append("\t\tpublic static ");
             mathStr.Append(m_TypeName);
             mathStr.Append(" ");
@@ -1286,7 +1286,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.AppendFormat("\t\t/// <summary>Return the {0} transpose of a {1} matrix.</summary>\n", resultType, m_TypeName);
             str.Append($"\t\t/// <param name=\"v\">Value to transpose.</param>\n");
             str.Append($"\t\t/// <returns>Transposed value.</returns>\n");
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tpublic static {0} transpose({1} v)\n", resultType, m_TypeName);
             str.Append("\t\t{\n");
 
@@ -1323,21 +1323,21 @@ namespace Unity.Mathematics.Mathematics.CodeGen
                 str.AppendFormat("        /// <summary>Returns the {0}2x2 full inverse of a {0}2x2 matrix.</summary>\n", m_BaseType);
                 str.AppendFormat("        /// <param name=\"m\">Matrix to invert.</param>\n");
                 str.AppendFormat("        /// <returns>The inverted matrix.</returns>\n");
-                str.AppendFormat(@"        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static {0}2x2 inverse({0}2x2 m)
-        {{
-            {0} a = m.c0.x;
-            {0} b = m.c1.x;
-            {0} c = m.c0.y;
-            {0} d = m.c1.y;
-
-            {0} det = a * d - b * c;
-
-            return {0}2x2(d, -b, -c, a) * ({1} / det);
-        }}
-
-",
-                    m_BaseType, oneStr);
+//                 str.AppendFormat(@"        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+//         public static {0}2x2 inverse({0}2x2 m)
+//         {{
+//             {0} a = m.c0.x;
+//             {0} b = m.c1.x;
+//             {0} c = m.c0.y;
+//             {0} d = m.c1.y;
+//
+//             {0} det = a * d - b * c;
+//
+//             return {0}2x2(d, -b, -c, a) * ({1} / det);
+//         }}
+//
+// ",
+//                     m_BaseType, oneStr);
             }
             else if(m_Rows == 3)
             {
@@ -1520,58 +1520,58 @@ namespace Unity.Mathematics.Mathematics.CodeGen
 
             if (m_Rows == 2)
             {
-                str.AppendFormat(@"        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static {0} determinant({0}2x2 m)
-        {{
-            {0} a = m.c0.x;
-            {0} b = m.c1.x;
-            {0} c = m.c0.y;
-            {0} d = m.c1.y;
-
-            return a * d - b * c;
-        }}
-
-",
-                    m_BaseType);
+//                 str.AppendFormat(@"        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+//         public static {0} determinant({0}2x2 m)
+//         {{
+//             {0} a = m.c0.x;
+//             {0} b = m.c1.x;
+//             {0} c = m.c0.y;
+//             {0} d = m.c1.y;
+//
+//             return a * d - b * c;
+//         }}
+//
+// ",
+//                     m_BaseType);
             }
             else if (m_Rows == 3)
             {
-                str.AppendFormat(@"        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static {0} determinant({0}3x3 m)
-        {{
-            {0}3 c0 = m.c0;
-            {0}3 c1 = m.c1;
-            {0}3 c2 = m.c2;
-
-            {0} m00 = c1.y * c2.z - c1.z * c2.y;
-            {0} m01 = c0.y * c2.z - c0.z * c2.y;
-            {0} m02 = c0.y * c1.z - c0.z * c1.y;
-
-            return c0.x * m00 - c1.x * m01 + c2.x * m02;
-        }}
-
-",
-                m_BaseType);
+//                 str.AppendFormat(@"        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+//         public static {0} determinant({0}3x3 m)
+//         {{
+//             {0}3 c0 = m.c0;
+//             {0}3 c1 = m.c1;
+//             {0}3 c2 = m.c2;
+//
+//             {0} m00 = c1.y * c2.z - c1.z * c2.y;
+//             {0} m01 = c0.y * c2.z - c0.z * c2.y;
+//             {0} m02 = c0.y * c1.z - c0.z * c1.y;
+//
+//             return c0.x * m00 - c1.x * m01 + c2.x * m02;
+//         }}
+//
+// ",
+//                 m_BaseType);
             }
             else if (m_Rows == 4)
             {
-                str.AppendFormat(@"        public static {0} determinant({0}4x4 m)
-        {{
-            {0}4 c0 = m.c0;
-            {0}4 c1 = m.c1;
-            {0}4 c2 = m.c2;
-            {0}4 c3 = m.c3;
-
-            {0} m00 = c1.y * (c2.z * c3.w - c2.w * c3.z) - c2.y * (c1.z * c3.w - c1.w * c3.z) + c3.y * (c1.z * c2.w - c1.w * c2.z);
-            {0} m01 = c0.y * (c2.z * c3.w - c2.w * c3.z) - c2.y * (c0.z * c3.w - c0.w * c3.z) + c3.y * (c0.z * c2.w - c0.w * c2.z);
-            {0} m02 = c0.y * (c1.z * c3.w - c1.w * c3.z) - c1.y * (c0.z * c3.w - c0.w * c3.z) + c3.y * (c0.z * c1.w - c0.w * c1.z);
-            {0} m03 = c0.y * (c1.z * c2.w - c1.w * c2.z) - c1.y * (c0.z * c2.w - c0.w * c2.z) + c2.y * (c0.z * c1.w - c0.w * c1.z);
-
-            return c0.x * m00 - c1.x * m01 + c2.x * m02 - c3.x * m03;
-        }}
-
-",
-                    m_BaseType);
+//                 str.AppendFormat(@"        public static {0} determinant({0}4x4 m)
+//         {{
+//             {0}4 c0 = m.c0;
+//             {0}4 c1 = m.c1;
+//             {0}4 c2 = m.c2;
+//             {0}4 c3 = m.c3;
+//
+//             {0} m00 = c1.y * (c2.z * c3.w - c2.w * c3.z) - c2.y * (c1.z * c3.w - c1.w * c3.z) + c3.y * (c1.z * c2.w - c1.w * c2.z);
+//             {0} m01 = c0.y * (c2.z * c3.w - c2.w * c3.z) - c2.y * (c0.z * c3.w - c0.w * c3.z) + c3.y * (c0.z * c2.w - c0.w * c2.z);
+//             {0} m02 = c0.y * (c1.z * c3.w - c1.w * c3.z) - c1.y * (c0.z * c3.w - c0.w * c3.z) + c3.y * (c0.z * c1.w - c0.w * c1.z);
+//             {0} m03 = c0.y * (c1.z * c2.w - c1.w * c2.z) - c1.y * (c0.z * c2.w - c0.w * c2.z) + c2.y * (c0.z * c1.w - c0.w * c1.z);
+//
+//             return c0.x * m00 - c1.x * m01 + c2.x * m02 - c3.x * m03;
+//         }}
+//
+// ",
+//                     m_BaseType);
             }
 
         }
@@ -1600,7 +1600,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             }
 
             str.Append($"\t\t/// <returns>{returnType} hash of the argument.</returns>\n");
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tpublic static {0} {1}({2} v)\n", returnType, functionName, m_TypeName);
             str.Append("\t\t{\n");
 
@@ -1672,7 +1672,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
                 str.AppendFormat("\t\t/// <summary>Returns a string representation of the {0}.</summary>\n", m_TypeName);
 
             str.Append("\t\t/// <returns>String representation of the value.</returns>\n");
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             if(useFormat)
                 str.Append("\t\tpublic string ToString(string format, IFormatProvider formatProvider)\n\t\t{\n");
             else
@@ -1735,7 +1735,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.AppendFormat($"\t\t/// <param name=\"lhs\">Left hand side {ToTypeName(m_BaseType, lhsRows, lhsColumns)} to use to compute componentwise {opDesc}.</param>\n");
             str.AppendFormat($"\t\t/// <param name=\"rhs\">Right hand side {ToTypeName(m_BaseType, rhsRows, rhsColumns)} to use to compute componentwise {opDesc}.</param>\n");
             str.AppendFormat($"\t\t/// <returns>{ToTypeName(resultType, resultRows, resultColumns)} result of the componentwise {opDesc}.</returns>\n");
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tpublic static {0} operator {1} ({2} lhs, {3} rhs)", ToTypeName(resultType, resultRows, resultColumns), op, ToTypeName(m_BaseType, lhsRows, lhsColumns), ToTypeName(m_BaseType, rhsRows, rhsColumns));
             str.Append(" { ");
             str.AppendFormat("return new {0} (", ToTypeName(resultType, resultRows, resultColumns));
@@ -1834,7 +1834,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.AppendFormat("\t\t/// <summary>Returns true if the {0} is equal to a given {0}, false otherwise.</summary>\n", m_TypeName);
             str.AppendFormat("\t\t/// <param name=\"rhs\">Right hand side argument to compare equality with.</param>\n");
             str.AppendFormat("\t\t/// <returns>The result of the equality comparison.</returns>\n");
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tpublic bool Equals({0} rhs) {{ return ", m_TypeName);
 
             for (int i = 0; i < resultCount; i++)
@@ -1852,14 +1852,14 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.AppendFormat("\t\t/// <summary>Returns true if the {0} is equal to a given {0}, false otherwise.</summary>\n", m_TypeName);
             str.AppendFormat("\t\t/// <param name=\"o\">Right hand side argument to compare equality with.</param>\n");
             str.AppendFormat("\t\t/// <returns>The result of the equality comparison.</returns>\n");
-            str.AppendFormat("\t\tpublic override bool Equals(object o) {{ return o is {0} converted && Equals(converted); }}\n\n", m_TypeName);
+            str.AppendFormat("\t\tpublic override bool Equals(object o) {{ return o is {0} && Equals(({0})o); }}\n\n", m_TypeName);
         }
 
         void GenerateGetHashCode(StringBuilder str)
         {
             str.AppendFormat("\t\t/// <summary>Returns a hash code for the {0}.</summary>\n", m_TypeName);
             str.AppendFormat("\t\t/// <returns>The computed hash code.</returns>\n");
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.Append("\t\tpublic override int GetHashCode() { return (int)math.hash(this); }\n\n");
         }
 
@@ -1875,7 +1875,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.AppendFormat($"\t\t/// <param name=\"x\">The {matrixOrVector} to {opDesc}.</param>\n");
             str.AppendFormat($"\t\t/// <param name=\"n\">The number of bits to {opDesc}.</param>\n");
             str.AppendFormat($"\t\t/// <returns>The result of the componentwise {opDesc}.</returns>\n");
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tpublic static {0} operator {1} ({0} x, int n)", m_TypeName, op);
             str.Append(" { ");
             str.AppendFormat("return new {0} (", m_TypeName);
@@ -1905,7 +1905,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.AppendFormat("\t\t/// <summary>Returns the result of a componentwise {0} operation on {1}.</summary>\n", opDesc, ToValueDescription(m_BaseType, m_Rows, m_Columns, 1));
             str.Append($"\t\t/// <param name=\"val\">Value to use when computing the componentwise {opDesc}.</param>\n");
             str.Append($"\t\t/// <returns>{m_TypeName} result of the componentwise {opDesc}.</returns>\n");
-            str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
+            // str.Append("\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]\n");
             str.AppendFormat("\t\tpublic static {0} operator {1} ({0} val)", m_TypeName, op);
             str.Append(" { ");
             str.AppendFormat("return new {0} (", m_TypeName);
@@ -2019,7 +2019,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             str.Append("\n\t\t{");
             if (swizzle.Length != 1)
             {
-                str.AppendFormat("\n\t\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]");
+                // str.AppendFormat("\n\t\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]");
                 str.Append("\n\t\t\tget { return new ");
                 str.Append(ToTypeName(m_BaseType, swizzle.Length, 1));
                 str.Append('(');
@@ -2043,7 +2043,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
             //Setter
             if (allowSetter)
             {
-                str.AppendFormat("\n\t\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]");
+                // str.AppendFormat("\n\t\t\t[MethodImpl(MethodImplOptions.AggressiveInlining)]");
                 str.Append("\n\t\t\tset { ");
                 for (int i = 0; i < swizzle.Length; i++)
                 {

@@ -30,7 +30,6 @@ namespace Unity.Mathematics
         /// <summary>Constructs a float4x2 matrix from two float4 vectors.</summary>
         /// <param name="c0">The matrix column c0 will be set to this value.</param>
         /// <param name="c1">The matrix column c1 will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(float4 c0, float4 c1)
         {
             this.c0 = c0;
@@ -46,7 +45,6 @@ namespace Unity.Mathematics
         /// <param name="m21">The matrix at row 2, column 1 will be set to this value.</param>
         /// <param name="m30">The matrix at row 3, column 0 will be set to this value.</param>
         /// <param name="m31">The matrix at row 3, column 1 will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(float m00, float m01,
                         float m10, float m11,
                         float m20, float m21,
@@ -58,7 +56,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a single float value by assigning it to every component.</summary>
         /// <param name="v">float to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(float v)
         {
             this.c0 = v;
@@ -67,7 +64,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a single bool value by converting it to float and assigning it to every component.</summary>
         /// <param name="v">bool to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(bool v)
         {
             this.c0 = math.select(new float4(0.0f), new float4(1.0f), v);
@@ -76,7 +72,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a bool4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">bool4x2 to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(bool4x2 v)
         {
             this.c0 = math.select(new float4(0.0f), new float4(1.0f), v.c0);
@@ -85,7 +80,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a single int value by converting it to float and assigning it to every component.</summary>
         /// <param name="v">int to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(int v)
         {
             this.c0 = v;
@@ -94,7 +88,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a int4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">int4x2 to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(int4x2 v)
         {
             this.c0 = v.c0;
@@ -103,7 +96,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a single uint value by converting it to float and assigning it to every component.</summary>
         /// <param name="v">uint to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(uint v)
         {
             this.c0 = v;
@@ -112,7 +104,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a uint4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">uint4x2 to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(uint4x2 v)
         {
             this.c0 = v.c0;
@@ -121,7 +112,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a single double value by converting it to float and assigning it to every component.</summary>
         /// <param name="v">double to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(double v)
         {
             this.c0 = (float4)v;
@@ -130,7 +120,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a float4x2 matrix from a double4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">double4x2 to convert to float4x2</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public float4x2(double4x2 v)
         {
             this.c0 = (float4)v.c0;
@@ -141,55 +130,46 @@ namespace Unity.Mathematics
         /// <summary>Implicitly converts a single float value to a float4x2 matrix by assigning it to every component.</summary>
         /// <param name="v">float to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator float4x2(float v) { return new float4x2(v); }
 
         /// <summary>Explicitly converts a single bool value to a float4x2 matrix by converting it to float and assigning it to every component.</summary>
         /// <param name="v">bool to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator float4x2(bool v) { return new float4x2(v); }
 
         /// <summary>Explicitly converts a bool4x2 matrix to a float4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">bool4x2 to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator float4x2(bool4x2 v) { return new float4x2(v); }
 
         /// <summary>Implicitly converts a single int value to a float4x2 matrix by converting it to float and assigning it to every component.</summary>
         /// <param name="v">int to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator float4x2(int v) { return new float4x2(v); }
 
         /// <summary>Implicitly converts a int4x2 matrix to a float4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">int4x2 to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator float4x2(int4x2 v) { return new float4x2(v); }
 
         /// <summary>Implicitly converts a single uint value to a float4x2 matrix by converting it to float and assigning it to every component.</summary>
         /// <param name="v">uint to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator float4x2(uint v) { return new float4x2(v); }
 
         /// <summary>Implicitly converts a uint4x2 matrix to a float4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">uint4x2 to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator float4x2(uint4x2 v) { return new float4x2(v); }
 
         /// <summary>Explicitly converts a single double value to a float4x2 matrix by converting it to float and assigning it to every component.</summary>
         /// <param name="v">double to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator float4x2(double v) { return new float4x2(v); }
 
         /// <summary>Explicitly converts a double4x2 matrix to a float4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">double4x2 to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator float4x2(double4x2 v) { return new float4x2(v); }
 
 
@@ -197,21 +177,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise multiplication.</param>
         /// <returns>float4x2 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator * (float4x2 lhs, float4x2 rhs) { return new float4x2 (lhs.c0 * rhs.c0, lhs.c1 * rhs.c1); }
 
         /// <summary>Returns the result of a componentwise multiplication operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise multiplication.</param>
         /// <returns>float4x2 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator * (float4x2 lhs, float rhs) { return new float4x2 (lhs.c0 * rhs, lhs.c1 * rhs); }
 
         /// <summary>Returns the result of a componentwise multiplication operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise multiplication.</param>
         /// <returns>float4x2 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator * (float lhs, float4x2 rhs) { return new float4x2 (lhs * rhs.c0, lhs * rhs.c1); }
 
 
@@ -219,21 +196,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise addition.</param>
         /// <returns>float4x2 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator + (float4x2 lhs, float4x2 rhs) { return new float4x2 (lhs.c0 + rhs.c0, lhs.c1 + rhs.c1); }
 
         /// <summary>Returns the result of a componentwise addition operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise addition.</param>
         /// <returns>float4x2 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator + (float4x2 lhs, float rhs) { return new float4x2 (lhs.c0 + rhs, lhs.c1 + rhs); }
 
         /// <summary>Returns the result of a componentwise addition operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise addition.</param>
         /// <returns>float4x2 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator + (float lhs, float4x2 rhs) { return new float4x2 (lhs + rhs.c0, lhs + rhs.c1); }
 
 
@@ -241,21 +215,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise subtraction.</param>
         /// <returns>float4x2 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator - (float4x2 lhs, float4x2 rhs) { return new float4x2 (lhs.c0 - rhs.c0, lhs.c1 - rhs.c1); }
 
         /// <summary>Returns the result of a componentwise subtraction operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise subtraction.</param>
         /// <returns>float4x2 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator - (float4x2 lhs, float rhs) { return new float4x2 (lhs.c0 - rhs, lhs.c1 - rhs); }
 
         /// <summary>Returns the result of a componentwise subtraction operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise subtraction.</param>
         /// <returns>float4x2 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator - (float lhs, float4x2 rhs) { return new float4x2 (lhs - rhs.c0, lhs - rhs.c1); }
 
 
@@ -263,21 +234,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise division.</param>
         /// <returns>float4x2 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator / (float4x2 lhs, float4x2 rhs) { return new float4x2 (lhs.c0 / rhs.c0, lhs.c1 / rhs.c1); }
 
         /// <summary>Returns the result of a componentwise division operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise division.</param>
         /// <returns>float4x2 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator / (float4x2 lhs, float rhs) { return new float4x2 (lhs.c0 / rhs, lhs.c1 / rhs); }
 
         /// <summary>Returns the result of a componentwise division operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise division.</param>
         /// <returns>float4x2 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator / (float lhs, float4x2 rhs) { return new float4x2 (lhs / rhs.c0, lhs / rhs.c1); }
 
 
@@ -285,35 +253,30 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise modulus.</param>
         /// <returns>float4x2 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator % (float4x2 lhs, float4x2 rhs) { return new float4x2 (lhs.c0 % rhs.c0, lhs.c1 % rhs.c1); }
 
         /// <summary>Returns the result of a componentwise modulus operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise modulus.</param>
         /// <returns>float4x2 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator % (float4x2 lhs, float rhs) { return new float4x2 (lhs.c0 % rhs, lhs.c1 % rhs); }
 
         /// <summary>Returns the result of a componentwise modulus operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise modulus.</param>
         /// <returns>float4x2 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator % (float lhs, float4x2 rhs) { return new float4x2 (lhs % rhs.c0, lhs % rhs.c1); }
 
 
         /// <summary>Returns the result of a componentwise increment operation on a float4x2 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise increment.</param>
         /// <returns>float4x2 result of the componentwise increment.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator ++ (float4x2 val) { return new float4x2 (++val.c0, ++val.c1); }
 
 
         /// <summary>Returns the result of a componentwise decrement operation on a float4x2 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise decrement.</param>
         /// <returns>float4x2 result of the componentwise decrement.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator -- (float4x2 val) { return new float4x2 (--val.c0, --val.c1); }
 
 
@@ -321,21 +284,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise less than.</param>
         /// <returns>bool4x2 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator < (float4x2 lhs, float4x2 rhs) { return new bool4x2 (lhs.c0 < rhs.c0, lhs.c1 < rhs.c1); }
 
         /// <summary>Returns the result of a componentwise less than operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise less than.</param>
         /// <returns>bool4x2 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator < (float4x2 lhs, float rhs) { return new bool4x2 (lhs.c0 < rhs, lhs.c1 < rhs); }
 
         /// <summary>Returns the result of a componentwise less than operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise less than.</param>
         /// <returns>bool4x2 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator < (float lhs, float4x2 rhs) { return new bool4x2 (lhs < rhs.c0, lhs < rhs.c1); }
 
 
@@ -343,21 +303,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise less or equal.</param>
         /// <returns>bool4x2 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator <= (float4x2 lhs, float4x2 rhs) { return new bool4x2 (lhs.c0 <= rhs.c0, lhs.c1 <= rhs.c1); }
 
         /// <summary>Returns the result of a componentwise less or equal operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise less or equal.</param>
         /// <returns>bool4x2 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator <= (float4x2 lhs, float rhs) { return new bool4x2 (lhs.c0 <= rhs, lhs.c1 <= rhs); }
 
         /// <summary>Returns the result of a componentwise less or equal operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise less or equal.</param>
         /// <returns>bool4x2 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator <= (float lhs, float4x2 rhs) { return new bool4x2 (lhs <= rhs.c0, lhs <= rhs.c1); }
 
 
@@ -365,21 +322,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise greater than.</param>
         /// <returns>bool4x2 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator > (float4x2 lhs, float4x2 rhs) { return new bool4x2 (lhs.c0 > rhs.c0, lhs.c1 > rhs.c1); }
 
         /// <summary>Returns the result of a componentwise greater than operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise greater than.</param>
         /// <returns>bool4x2 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator > (float4x2 lhs, float rhs) { return new bool4x2 (lhs.c0 > rhs, lhs.c1 > rhs); }
 
         /// <summary>Returns the result of a componentwise greater than operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise greater than.</param>
         /// <returns>bool4x2 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator > (float lhs, float4x2 rhs) { return new bool4x2 (lhs > rhs.c0, lhs > rhs.c1); }
 
 
@@ -387,35 +341,30 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise greater or equal.</param>
         /// <returns>bool4x2 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator >= (float4x2 lhs, float4x2 rhs) { return new bool4x2 (lhs.c0 >= rhs.c0, lhs.c1 >= rhs.c1); }
 
         /// <summary>Returns the result of a componentwise greater or equal operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise greater or equal.</param>
         /// <returns>bool4x2 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator >= (float4x2 lhs, float rhs) { return new bool4x2 (lhs.c0 >= rhs, lhs.c1 >= rhs); }
 
         /// <summary>Returns the result of a componentwise greater or equal operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise greater or equal.</param>
         /// <returns>bool4x2 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator >= (float lhs, float4x2 rhs) { return new bool4x2 (lhs >= rhs.c0, lhs >= rhs.c1); }
 
 
         /// <summary>Returns the result of a componentwise unary minus operation on a float4x2 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise unary minus.</param>
         /// <returns>float4x2 result of the componentwise unary minus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator - (float4x2 val) { return new float4x2 (-val.c0, -val.c1); }
 
 
         /// <summary>Returns the result of a componentwise unary plus operation on a float4x2 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise unary plus.</param>
         /// <returns>float4x2 result of the componentwise unary plus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 operator + (float4x2 val) { return new float4x2 (+val.c0, +val.c1); }
 
 
@@ -423,21 +372,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise equality.</param>
         /// <returns>bool4x2 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator == (float4x2 lhs, float4x2 rhs) { return new bool4x2 (lhs.c0 == rhs.c0, lhs.c1 == rhs.c1); }
 
         /// <summary>Returns the result of a componentwise equality operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise equality.</param>
         /// <returns>bool4x2 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator == (float4x2 lhs, float rhs) { return new bool4x2 (lhs.c0 == rhs, lhs.c1 == rhs); }
 
         /// <summary>Returns the result of a componentwise equality operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise equality.</param>
         /// <returns>bool4x2 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator == (float lhs, float4x2 rhs) { return new bool4x2 (lhs == rhs.c0, lhs == rhs.c1); }
 
 
@@ -445,59 +391,41 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise not equal.</param>
         /// <returns>bool4x2 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator != (float4x2 lhs, float4x2 rhs) { return new bool4x2 (lhs.c0 != rhs.c0, lhs.c1 != rhs.c1); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a float4x2 matrix and a float value.</summary>
         /// <param name="lhs">Left hand side float4x2 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side float to use to compute componentwise not equal.</param>
         /// <returns>bool4x2 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator != (float4x2 lhs, float rhs) { return new bool4x2 (lhs.c0 != rhs, lhs.c1 != rhs); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a float value and a float4x2 matrix.</summary>
         /// <param name="lhs">Left hand side float to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side float4x2 to use to compute componentwise not equal.</param>
         /// <returns>bool4x2 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 operator != (float lhs, float4x2 rhs) { return new bool4x2 (lhs != rhs.c0, lhs != rhs.c1); }
 
 
 
-        /// <summary>Returns the float4 element at a specified index.</summary>
-        unsafe public ref float4 this[int index]
-        {
-            get
-            {
-#if ENABLE_UNITY_COLLECTIONS_CHECKS
-                if ((uint)index >= 2)
-                    throw new System.ArgumentException("index must be between[0...1]");
-#endif
-                fixed (float4x2* array = &this) { return ref ((float4*)array)[index]; }
-            }
-        }
 
         /// <summary>Returns true if the float4x2 is equal to a given float4x2, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(float4x2 rhs) { return c0.Equals(rhs.c0) && c1.Equals(rhs.c1); }
 
         /// <summary>Returns true if the float4x2 is equal to a given float4x2, false otherwise.</summary>
         /// <param name="o">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        public override bool Equals(object o) { return o is float4x2 converted && Equals(converted); }
+        public override bool Equals(object o) { return o is float4x2 && Equals((float4x2)o); }
 
 
         /// <summary>Returns a hash code for the float4x2.</summary>
         /// <returns>The computed hash code.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() { return (int)math.hash(this); }
 
 
         /// <summary>Returns a string representation of the float4x2.</summary>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()
         {
             return string.Format("float4x2({0}f, {1}f,  {2}f, {3}f,  {4}f, {5}f,  {6}f, {7}f)", c0.x, c1.x, c0.y, c1.y, c0.z, c1.z, c0.w, c1.w);
@@ -507,7 +435,6 @@ namespace Unity.Mathematics
         /// <param name="format">Format string to use during string formatting.</param>
         /// <param name="formatProvider">Format provider to use during string formatting.</param>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return string.Format("float4x2({0}f, {1}f,  {2}f, {3}f,  {4}f, {5}f,  {6}f, {7}f)", c0.x.ToString(format, formatProvider), c1.x.ToString(format, formatProvider), c0.y.ToString(format, formatProvider), c1.y.ToString(format, formatProvider), c0.z.ToString(format, formatProvider), c1.z.ToString(format, formatProvider), c0.w.ToString(format, formatProvider), c1.w.ToString(format, formatProvider));
@@ -521,7 +448,6 @@ namespace Unity.Mathematics
         /// <param name="c0">The matrix column c0 will be set to this value.</param>
         /// <param name="c1">The matrix column c1 will be set to this value.</param>
         /// <returns>float4x2 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(float4 c0, float4 c1) { return new float4x2(c0, c1); }
 
         /// <summary>Returns a float4x2 matrix constructed from from 8 float values given in row-major order.</summary>
@@ -534,7 +460,6 @@ namespace Unity.Mathematics
         /// <param name="m30">The matrix at row 3, column 0 will be set to this value.</param>
         /// <param name="m31">The matrix at row 3, column 1 will be set to this value.</param>
         /// <returns>float4x2 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(float m00, float m01,
                                         float m10, float m11,
                                         float m20, float m21,
@@ -549,61 +474,51 @@ namespace Unity.Mathematics
         /// <summary>Returns a float4x2 matrix constructed from a single float value by assigning it to every component.</summary>
         /// <param name="v">float to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(float v) { return new float4x2(v); }
 
         /// <summary>Returns a float4x2 matrix constructed from a single bool value by converting it to float and assigning it to every component.</summary>
         /// <param name="v">bool to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(bool v) { return new float4x2(v); }
 
         /// <summary>Return a float4x2 matrix constructed from a bool4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">bool4x2 to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(bool4x2 v) { return new float4x2(v); }
 
         /// <summary>Returns a float4x2 matrix constructed from a single int value by converting it to float and assigning it to every component.</summary>
         /// <param name="v">int to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(int v) { return new float4x2(v); }
 
         /// <summary>Return a float4x2 matrix constructed from a int4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">int4x2 to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(int4x2 v) { return new float4x2(v); }
 
         /// <summary>Returns a float4x2 matrix constructed from a single uint value by converting it to float and assigning it to every component.</summary>
         /// <param name="v">uint to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(uint v) { return new float4x2(v); }
 
         /// <summary>Return a float4x2 matrix constructed from a uint4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">uint4x2 to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(uint4x2 v) { return new float4x2(v); }
 
         /// <summary>Returns a float4x2 matrix constructed from a single double value by converting it to float and assigning it to every component.</summary>
         /// <param name="v">double to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(double v) { return new float4x2(v); }
 
         /// <summary>Return a float4x2 matrix constructed from a double4x2 matrix by componentwise conversion.</summary>
         /// <param name="v">double4x2 to convert to float4x2</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x2 float4x2(double4x2 v) { return new float4x2(v); }
 
         /// <summary>Return the float2x4 transpose of a float4x2 matrix.</summary>
         /// <param name="v">Value to transpose.</param>
         /// <returns>Transposed value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2x4 transpose(float4x2 v)
         {
             return float2x4(
@@ -614,7 +529,6 @@ namespace Unity.Mathematics
         /// <summary>Returns a uint hash code of a float4x2 matrix.</summary>
         /// <param name="v">Matrix value to hash.</param>
         /// <returns>uint hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint hash(float4x2 v)
         {
             return csum(asuint(v.c0) * uint4(0xAAC3C25Du, 0xD21D0945u, 0x88FCAB2Du, 0x614DA60Du) +
@@ -628,7 +542,6 @@ namespace Unity.Mathematics
         /// </summary>
         /// <param name="v">Matrix value to hash.</param>
         /// <returns>uint4 hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 hashwide(float4x2 v)
         {
             return (asuint(v.c0) * uint4(0x863E3729u, 0xE191B035u, 0x68586FAFu, 0xD4DFF6D3u) +

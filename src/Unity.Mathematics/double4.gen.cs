@@ -38,7 +38,6 @@ namespace Unity.Mathematics
         /// <param name="y">The constructed vector's y component will be set to this value.</param>
         /// <param name="z">The constructed vector's z component will be set to this value.</param>
         /// <param name="w">The constructed vector's w component will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double x, double y, double z, double w)
         {
             this.x = x;
@@ -51,7 +50,6 @@ namespace Unity.Mathematics
         /// <param name="x">The constructed vector's x component will be set to this value.</param>
         /// <param name="y">The constructed vector's y component will be set to this value.</param>
         /// <param name="zw">The constructed vector's zw components will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double x, double y, double2 zw)
         {
             this.x = x;
@@ -64,7 +62,6 @@ namespace Unity.Mathematics
         /// <param name="x">The constructed vector's x component will be set to this value.</param>
         /// <param name="yz">The constructed vector's yz components will be set to this value.</param>
         /// <param name="w">The constructed vector's w component will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double x, double2 yz, double w)
         {
             this.x = x;
@@ -76,7 +73,6 @@ namespace Unity.Mathematics
         /// <summary>Constructs a double4 vector from a double value and a double3 vector.</summary>
         /// <param name="x">The constructed vector's x component will be set to this value.</param>
         /// <param name="yzw">The constructed vector's yzw components will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double x, double3 yzw)
         {
             this.x = x;
@@ -89,7 +85,6 @@ namespace Unity.Mathematics
         /// <param name="xy">The constructed vector's xy components will be set to this value.</param>
         /// <param name="z">The constructed vector's z component will be set to this value.</param>
         /// <param name="w">The constructed vector's w component will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double2 xy, double z, double w)
         {
             this.x = xy.x;
@@ -101,7 +96,6 @@ namespace Unity.Mathematics
         /// <summary>Constructs a double4 vector from two double2 vectors.</summary>
         /// <param name="xy">The constructed vector's xy components will be set to this value.</param>
         /// <param name="zw">The constructed vector's zw components will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double2 xy, double2 zw)
         {
             this.x = xy.x;
@@ -113,7 +107,6 @@ namespace Unity.Mathematics
         /// <summary>Constructs a double4 vector from a double3 vector and a double value.</summary>
         /// <param name="xyz">The constructed vector's xyz components will be set to this value.</param>
         /// <param name="w">The constructed vector's w component will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double3 xyz, double w)
         {
             this.x = xyz.x;
@@ -124,7 +117,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a double4 vector.</summary>
         /// <param name="xyzw">The constructed vector's xyzw components will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double4 xyzw)
         {
             this.x = xyzw.x;
@@ -135,7 +127,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a single double value by assigning it to every component.</summary>
         /// <param name="v">double to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(double v)
         {
             this.x = v;
@@ -146,7 +137,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a single bool value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">bool to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(bool v)
         {
             this.x = v ? 1.0 : 0.0;
@@ -157,7 +147,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a bool4 vector by componentwise conversion.</summary>
         /// <param name="v">bool4 to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(bool4 v)
         {
             this.x = v.x ? 1.0 : 0.0;
@@ -168,7 +157,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a single int value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">int to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(int v)
         {
             this.x = v;
@@ -179,7 +167,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a int4 vector by componentwise conversion.</summary>
         /// <param name="v">int4 to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(int4 v)
         {
             this.x = v.x;
@@ -190,7 +177,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a single uint value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">uint to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(uint v)
         {
             this.x = v;
@@ -201,7 +187,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a uint4 vector by componentwise conversion.</summary>
         /// <param name="v">uint4 to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(uint4 v)
         {
             this.x = v.x;
@@ -212,7 +197,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a single half value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">half to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(half v)
         {
             this.x = v;
@@ -223,7 +207,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a half4 vector by componentwise conversion.</summary>
         /// <param name="v">half4 to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(half4 v)
         {
             this.x = v.x;
@@ -234,7 +217,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a single float value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">float to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(float v)
         {
             this.x = v;
@@ -245,7 +227,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double4 vector from a float4 vector by componentwise conversion.</summary>
         /// <param name="v">float4 to convert to double4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double4(float4 v)
         {
             this.x = v.x;
@@ -258,67 +239,56 @@ namespace Unity.Mathematics
         /// <summary>Implicitly converts a single double value to a double4 vector by assigning it to every component.</summary>
         /// <param name="v">double to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(double v) { return new double4(v); }
 
         /// <summary>Explicitly converts a single bool value to a double4 vector by converting it to double and assigning it to every component.</summary>
         /// <param name="v">bool to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator double4(bool v) { return new double4(v); }
 
         /// <summary>Explicitly converts a bool4 vector to a double4 vector by componentwise conversion.</summary>
         /// <param name="v">bool4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator double4(bool4 v) { return new double4(v); }
 
         /// <summary>Implicitly converts a single int value to a double4 vector by converting it to double and assigning it to every component.</summary>
         /// <param name="v">int to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(int v) { return new double4(v); }
 
         /// <summary>Implicitly converts a int4 vector to a double4 vector by componentwise conversion.</summary>
         /// <param name="v">int4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(int4 v) { return new double4(v); }
 
         /// <summary>Implicitly converts a single uint value to a double4 vector by converting it to double and assigning it to every component.</summary>
         /// <param name="v">uint to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(uint v) { return new double4(v); }
 
         /// <summary>Implicitly converts a uint4 vector to a double4 vector by componentwise conversion.</summary>
         /// <param name="v">uint4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(uint4 v) { return new double4(v); }
 
         /// <summary>Implicitly converts a single half value to a double4 vector by converting it to double and assigning it to every component.</summary>
         /// <param name="v">half to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(half v) { return new double4(v); }
 
         /// <summary>Implicitly converts a half4 vector to a double4 vector by componentwise conversion.</summary>
         /// <param name="v">half4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(half4 v) { return new double4(v); }
 
         /// <summary>Implicitly converts a single float value to a double4 vector by converting it to double and assigning it to every component.</summary>
         /// <param name="v">float to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(float v) { return new double4(v); }
 
         /// <summary>Implicitly converts a float4 vector to a double4 vector by componentwise conversion.</summary>
         /// <param name="v">float4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(float4 v) { return new double4(v); }
 
 
@@ -326,21 +296,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise multiplication.</param>
         /// <returns>double4 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator * (double4 lhs, double4 rhs) { return new double4 (lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z, lhs.w * rhs.w); }
 
         /// <summary>Returns the result of a componentwise multiplication operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise multiplication.</param>
         /// <returns>double4 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator * (double4 lhs, double rhs) { return new double4 (lhs.x * rhs, lhs.y * rhs, lhs.z * rhs, lhs.w * rhs); }
 
         /// <summary>Returns the result of a componentwise multiplication operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise multiplication.</param>
         /// <returns>double4 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator * (double lhs, double4 rhs) { return new double4 (lhs * rhs.x, lhs * rhs.y, lhs * rhs.z, lhs * rhs.w); }
 
 
@@ -348,21 +315,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise addition.</param>
         /// <returns>double4 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator + (double4 lhs, double4 rhs) { return new double4 (lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w); }
 
         /// <summary>Returns the result of a componentwise addition operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise addition.</param>
         /// <returns>double4 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator + (double4 lhs, double rhs) { return new double4 (lhs.x + rhs, lhs.y + rhs, lhs.z + rhs, lhs.w + rhs); }
 
         /// <summary>Returns the result of a componentwise addition operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise addition.</param>
         /// <returns>double4 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator + (double lhs, double4 rhs) { return new double4 (lhs + rhs.x, lhs + rhs.y, lhs + rhs.z, lhs + rhs.w); }
 
 
@@ -370,21 +334,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise subtraction.</param>
         /// <returns>double4 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator - (double4 lhs, double4 rhs) { return new double4 (lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w); }
 
         /// <summary>Returns the result of a componentwise subtraction operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise subtraction.</param>
         /// <returns>double4 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator - (double4 lhs, double rhs) { return new double4 (lhs.x - rhs, lhs.y - rhs, lhs.z - rhs, lhs.w - rhs); }
 
         /// <summary>Returns the result of a componentwise subtraction operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise subtraction.</param>
         /// <returns>double4 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator - (double lhs, double4 rhs) { return new double4 (lhs - rhs.x, lhs - rhs.y, lhs - rhs.z, lhs - rhs.w); }
 
 
@@ -392,21 +353,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise division.</param>
         /// <returns>double4 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator / (double4 lhs, double4 rhs) { return new double4 (lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w); }
 
         /// <summary>Returns the result of a componentwise division operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise division.</param>
         /// <returns>double4 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator / (double4 lhs, double rhs) { return new double4 (lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs); }
 
         /// <summary>Returns the result of a componentwise division operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise division.</param>
         /// <returns>double4 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator / (double lhs, double4 rhs) { return new double4 (lhs / rhs.x, lhs / rhs.y, lhs / rhs.z, lhs / rhs.w); }
 
 
@@ -414,35 +372,30 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise modulus.</param>
         /// <returns>double4 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator % (double4 lhs, double4 rhs) { return new double4 (lhs.x % rhs.x, lhs.y % rhs.y, lhs.z % rhs.z, lhs.w % rhs.w); }
 
         /// <summary>Returns the result of a componentwise modulus operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise modulus.</param>
         /// <returns>double4 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator % (double4 lhs, double rhs) { return new double4 (lhs.x % rhs, lhs.y % rhs, lhs.z % rhs, lhs.w % rhs); }
 
         /// <summary>Returns the result of a componentwise modulus operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise modulus.</param>
         /// <returns>double4 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator % (double lhs, double4 rhs) { return new double4 (lhs % rhs.x, lhs % rhs.y, lhs % rhs.z, lhs % rhs.w); }
 
 
         /// <summary>Returns the result of a componentwise increment operation on a double4 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise increment.</param>
         /// <returns>double4 result of the componentwise increment.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator ++ (double4 val) { return new double4 (++val.x, ++val.y, ++val.z, ++val.w); }
 
 
         /// <summary>Returns the result of a componentwise decrement operation on a double4 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise decrement.</param>
         /// <returns>double4 result of the componentwise decrement.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator -- (double4 val) { return new double4 (--val.x, --val.y, --val.z, --val.w); }
 
 
@@ -450,21 +403,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise less than.</param>
         /// <returns>bool4 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator < (double4 lhs, double4 rhs) { return new bool4 (lhs.x < rhs.x, lhs.y < rhs.y, lhs.z < rhs.z, lhs.w < rhs.w); }
 
         /// <summary>Returns the result of a componentwise less than operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise less than.</param>
         /// <returns>bool4 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator < (double4 lhs, double rhs) { return new bool4 (lhs.x < rhs, lhs.y < rhs, lhs.z < rhs, lhs.w < rhs); }
 
         /// <summary>Returns the result of a componentwise less than operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise less than.</param>
         /// <returns>bool4 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator < (double lhs, double4 rhs) { return new bool4 (lhs < rhs.x, lhs < rhs.y, lhs < rhs.z, lhs < rhs.w); }
 
 
@@ -472,21 +422,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise less or equal.</param>
         /// <returns>bool4 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator <= (double4 lhs, double4 rhs) { return new bool4 (lhs.x <= rhs.x, lhs.y <= rhs.y, lhs.z <= rhs.z, lhs.w <= rhs.w); }
 
         /// <summary>Returns the result of a componentwise less or equal operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise less or equal.</param>
         /// <returns>bool4 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator <= (double4 lhs, double rhs) { return new bool4 (lhs.x <= rhs, lhs.y <= rhs, lhs.z <= rhs, lhs.w <= rhs); }
 
         /// <summary>Returns the result of a componentwise less or equal operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise less or equal.</param>
         /// <returns>bool4 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator <= (double lhs, double4 rhs) { return new bool4 (lhs <= rhs.x, lhs <= rhs.y, lhs <= rhs.z, lhs <= rhs.w); }
 
 
@@ -494,21 +441,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise greater than.</param>
         /// <returns>bool4 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator > (double4 lhs, double4 rhs) { return new bool4 (lhs.x > rhs.x, lhs.y > rhs.y, lhs.z > rhs.z, lhs.w > rhs.w); }
 
         /// <summary>Returns the result of a componentwise greater than operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise greater than.</param>
         /// <returns>bool4 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator > (double4 lhs, double rhs) { return new bool4 (lhs.x > rhs, lhs.y > rhs, lhs.z > rhs, lhs.w > rhs); }
 
         /// <summary>Returns the result of a componentwise greater than operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise greater than.</param>
         /// <returns>bool4 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator > (double lhs, double4 rhs) { return new bool4 (lhs > rhs.x, lhs > rhs.y, lhs > rhs.z, lhs > rhs.w); }
 
 
@@ -516,35 +460,30 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise greater or equal.</param>
         /// <returns>bool4 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator >= (double4 lhs, double4 rhs) { return new bool4 (lhs.x >= rhs.x, lhs.y >= rhs.y, lhs.z >= rhs.z, lhs.w >= rhs.w); }
 
         /// <summary>Returns the result of a componentwise greater or equal operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise greater or equal.</param>
         /// <returns>bool4 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator >= (double4 lhs, double rhs) { return new bool4 (lhs.x >= rhs, lhs.y >= rhs, lhs.z >= rhs, lhs.w >= rhs); }
 
         /// <summary>Returns the result of a componentwise greater or equal operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise greater or equal.</param>
         /// <returns>bool4 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator >= (double lhs, double4 rhs) { return new bool4 (lhs >= rhs.x, lhs >= rhs.y, lhs >= rhs.z, lhs >= rhs.w); }
 
 
         /// <summary>Returns the result of a componentwise unary minus operation on a double4 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise unary minus.</param>
         /// <returns>double4 result of the componentwise unary minus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator - (double4 val) { return new double4 (-val.x, -val.y, -val.z, -val.w); }
 
 
         /// <summary>Returns the result of a componentwise unary plus operation on a double4 vector.</summary>
         /// <param name="val">Value to use when computing the componentwise unary plus.</param>
         /// <returns>double4 result of the componentwise unary plus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 operator + (double4 val) { return new double4 (+val.x, +val.y, +val.z, +val.w); }
 
 
@@ -552,21 +491,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise equality.</param>
         /// <returns>bool4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator == (double4 lhs, double4 rhs) { return new bool4 (lhs.x == rhs.x, lhs.y == rhs.y, lhs.z == rhs.z, lhs.w == rhs.w); }
 
         /// <summary>Returns the result of a componentwise equality operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise equality.</param>
         /// <returns>bool4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator == (double4 lhs, double rhs) { return new bool4 (lhs.x == rhs, lhs.y == rhs, lhs.z == rhs, lhs.w == rhs); }
 
         /// <summary>Returns the result of a componentwise equality operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise equality.</param>
         /// <returns>bool4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator == (double lhs, double4 rhs) { return new bool4 (lhs == rhs.x, lhs == rhs.y, lhs == rhs.z, lhs == rhs.w); }
 
 
@@ -574,21 +510,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double4 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise not equal.</param>
         /// <returns>bool4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator != (double4 lhs, double4 rhs) { return new bool4 (lhs.x != rhs.x, lhs.y != rhs.y, lhs.z != rhs.z, lhs.w != rhs.w); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a double4 vector and a double value.</summary>
         /// <param name="lhs">Left hand side double4 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise not equal.</param>
         /// <returns>bool4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator != (double4 lhs, double rhs) { return new bool4 (lhs.x != rhs, lhs.y != rhs, lhs.z != rhs, lhs.w != rhs); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a double value and a double4 vector.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side double4 to use to compute componentwise not equal.</param>
         /// <returns>bool4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 operator != (double lhs, double4 rhs) { return new bool4 (lhs != rhs.x, lhs != rhs.y, lhs != rhs.z, lhs != rhs.w); }
 
 
@@ -598,7 +531,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, x, x); }
         }
 
@@ -607,7 +539,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, x, y); }
         }
 
@@ -616,7 +547,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, x, z); }
         }
 
@@ -625,7 +555,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, x, w); }
         }
 
@@ -634,7 +563,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, y, x); }
         }
 
@@ -643,7 +571,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, y, y); }
         }
 
@@ -652,7 +579,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, y, z); }
         }
 
@@ -661,7 +587,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, y, w); }
         }
 
@@ -670,7 +595,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, z, x); }
         }
 
@@ -679,7 +603,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, z, y); }
         }
 
@@ -688,7 +611,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, z, z); }
         }
 
@@ -697,7 +619,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, z, w); }
         }
 
@@ -706,7 +627,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, w, x); }
         }
 
@@ -715,7 +635,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, w, y); }
         }
 
@@ -724,7 +643,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, w, z); }
         }
 
@@ -733,7 +651,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xxww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, x, w, w); }
         }
 
@@ -742,7 +659,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, x, x); }
         }
 
@@ -751,7 +667,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, x, y); }
         }
 
@@ -760,7 +675,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, x, z); }
         }
 
@@ -769,7 +683,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, x, w); }
         }
 
@@ -778,7 +691,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, y, x); }
         }
 
@@ -787,7 +699,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, y, y); }
         }
 
@@ -796,7 +707,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, y, z); }
         }
 
@@ -805,7 +715,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, y, w); }
         }
 
@@ -814,7 +723,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, z, x); }
         }
 
@@ -823,7 +731,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, z, y); }
         }
 
@@ -832,7 +739,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, z, z); }
         }
 
@@ -841,9 +747,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, z, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; y = value.y; z = value.z; w = value.w; }
         }
 
@@ -852,7 +756,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xywx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, w, x); }
         }
 
@@ -861,7 +764,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xywy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, w, y); }
         }
 
@@ -870,9 +772,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xywz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, w, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; y = value.y; w = value.z; z = value.w; }
         }
 
@@ -881,7 +781,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xyww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, y, w, w); }
         }
 
@@ -890,7 +789,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, x, x); }
         }
 
@@ -899,7 +797,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, x, y); }
         }
 
@@ -908,7 +805,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, x, z); }
         }
 
@@ -917,7 +813,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, x, w); }
         }
 
@@ -926,7 +821,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, y, x); }
         }
 
@@ -935,7 +829,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, y, y); }
         }
 
@@ -944,7 +837,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, y, z); }
         }
 
@@ -953,9 +845,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, y, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; z = value.y; y = value.z; w = value.w; }
         }
 
@@ -964,7 +854,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, z, x); }
         }
 
@@ -973,7 +862,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, z, y); }
         }
 
@@ -982,7 +870,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, z, z); }
         }
 
@@ -991,7 +878,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, z, w); }
         }
 
@@ -1000,7 +886,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, w, x); }
         }
 
@@ -1009,9 +894,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, w, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; z = value.y; w = value.z; y = value.w; }
         }
 
@@ -1020,7 +903,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, w, z); }
         }
 
@@ -1029,7 +911,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xzww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, z, w, w); }
         }
 
@@ -1038,7 +919,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, x, x); }
         }
 
@@ -1047,7 +927,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, x, y); }
         }
 
@@ -1056,7 +935,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, x, z); }
         }
 
@@ -1065,7 +943,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, x, w); }
         }
 
@@ -1074,7 +951,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, y, x); }
         }
 
@@ -1083,7 +959,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, y, y); }
         }
 
@@ -1092,9 +967,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, y, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; w = value.y; y = value.z; z = value.w; }
         }
 
@@ -1103,7 +976,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, y, w); }
         }
 
@@ -1112,7 +984,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, z, x); }
         }
 
@@ -1121,9 +992,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, z, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; w = value.y; z = value.z; y = value.w; }
         }
 
@@ -1132,7 +1001,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, z, z); }
         }
 
@@ -1141,7 +1009,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, z, w); }
         }
 
@@ -1150,7 +1017,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, w, x); }
         }
 
@@ -1159,7 +1025,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, w, y); }
         }
 
@@ -1168,7 +1033,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, w, z); }
         }
 
@@ -1177,7 +1041,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 xwww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(x, w, w, w); }
         }
 
@@ -1186,7 +1049,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, x, x); }
         }
 
@@ -1195,7 +1057,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, x, y); }
         }
 
@@ -1204,7 +1065,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, x, z); }
         }
 
@@ -1213,7 +1073,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, x, w); }
         }
 
@@ -1222,7 +1081,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, y, x); }
         }
 
@@ -1231,7 +1089,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, y, y); }
         }
 
@@ -1240,7 +1097,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, y, z); }
         }
 
@@ -1249,7 +1105,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, y, w); }
         }
 
@@ -1258,7 +1113,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, z, x); }
         }
 
@@ -1267,7 +1121,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, z, y); }
         }
 
@@ -1276,7 +1129,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, z, z); }
         }
 
@@ -1285,9 +1137,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, z, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; x = value.y; z = value.z; w = value.w; }
         }
 
@@ -1296,7 +1146,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, w, x); }
         }
 
@@ -1305,7 +1154,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, w, y); }
         }
 
@@ -1314,9 +1162,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, w, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; x = value.y; w = value.z; z = value.w; }
         }
 
@@ -1325,7 +1171,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yxww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, x, w, w); }
         }
 
@@ -1334,7 +1179,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, x, x); }
         }
 
@@ -1343,7 +1187,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, x, y); }
         }
 
@@ -1352,7 +1195,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, x, z); }
         }
 
@@ -1361,7 +1203,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, x, w); }
         }
 
@@ -1370,7 +1211,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, y, x); }
         }
 
@@ -1379,7 +1219,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, y, y); }
         }
 
@@ -1388,7 +1227,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, y, z); }
         }
 
@@ -1397,7 +1235,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, y, w); }
         }
 
@@ -1406,7 +1243,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, z, x); }
         }
 
@@ -1415,7 +1251,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, z, y); }
         }
 
@@ -1424,7 +1259,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, z, z); }
         }
 
@@ -1433,7 +1267,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, z, w); }
         }
 
@@ -1442,7 +1275,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yywx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, w, x); }
         }
 
@@ -1451,7 +1283,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yywy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, w, y); }
         }
 
@@ -1460,7 +1291,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yywz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, w, z); }
         }
 
@@ -1469,7 +1299,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yyww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, y, w, w); }
         }
 
@@ -1478,7 +1307,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, x, x); }
         }
 
@@ -1487,7 +1315,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, x, y); }
         }
 
@@ -1496,7 +1323,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, x, z); }
         }
 
@@ -1505,9 +1331,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, x, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; z = value.y; x = value.z; w = value.w; }
         }
 
@@ -1516,7 +1340,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, y, x); }
         }
 
@@ -1525,7 +1348,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, y, y); }
         }
 
@@ -1534,7 +1356,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, y, z); }
         }
 
@@ -1543,7 +1364,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, y, w); }
         }
 
@@ -1552,7 +1372,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, z, x); }
         }
 
@@ -1561,7 +1380,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, z, y); }
         }
 
@@ -1570,7 +1388,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, z, z); }
         }
 
@@ -1579,7 +1396,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, z, w); }
         }
 
@@ -1588,9 +1404,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, w, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; z = value.y; w = value.z; x = value.w; }
         }
 
@@ -1599,7 +1413,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, w, y); }
         }
 
@@ -1608,7 +1421,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, w, z); }
         }
 
@@ -1617,7 +1429,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 yzww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, z, w, w); }
         }
 
@@ -1626,7 +1437,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, x, x); }
         }
 
@@ -1635,7 +1445,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, x, y); }
         }
 
@@ -1644,9 +1453,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, x, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; w = value.y; x = value.z; z = value.w; }
         }
 
@@ -1655,7 +1462,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, x, w); }
         }
 
@@ -1664,7 +1470,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, y, x); }
         }
 
@@ -1673,7 +1478,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, y, y); }
         }
 
@@ -1682,7 +1486,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, y, z); }
         }
 
@@ -1691,7 +1494,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, y, w); }
         }
 
@@ -1700,9 +1502,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, z, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; w = value.y; z = value.z; x = value.w; }
         }
 
@@ -1711,7 +1511,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, z, y); }
         }
 
@@ -1720,7 +1519,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, z, z); }
         }
 
@@ -1729,7 +1527,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, z, w); }
         }
 
@@ -1738,7 +1535,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, w, x); }
         }
 
@@ -1747,7 +1543,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, w, y); }
         }
 
@@ -1756,7 +1551,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, w, z); }
         }
 
@@ -1765,7 +1559,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 ywww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(y, w, w, w); }
         }
 
@@ -1774,7 +1567,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, x, x); }
         }
 
@@ -1783,7 +1575,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, x, y); }
         }
 
@@ -1792,7 +1583,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, x, z); }
         }
 
@@ -1801,7 +1591,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, x, w); }
         }
 
@@ -1810,7 +1599,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, y, x); }
         }
 
@@ -1819,7 +1607,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, y, y); }
         }
 
@@ -1828,7 +1615,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, y, z); }
         }
 
@@ -1837,9 +1623,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, y, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; x = value.y; y = value.z; w = value.w; }
         }
 
@@ -1848,7 +1632,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, z, x); }
         }
 
@@ -1857,7 +1640,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, z, y); }
         }
 
@@ -1866,7 +1648,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, z, z); }
         }
 
@@ -1875,7 +1656,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, z, w); }
         }
 
@@ -1884,7 +1664,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, w, x); }
         }
 
@@ -1893,9 +1672,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, w, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; x = value.y; w = value.z; y = value.w; }
         }
 
@@ -1904,7 +1681,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, w, z); }
         }
 
@@ -1913,7 +1689,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zxww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, x, w, w); }
         }
 
@@ -1922,7 +1697,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, x, x); }
         }
 
@@ -1931,7 +1705,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, x, y); }
         }
 
@@ -1940,7 +1713,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, x, z); }
         }
 
@@ -1949,9 +1721,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, x, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; y = value.y; x = value.z; w = value.w; }
         }
 
@@ -1960,7 +1730,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, y, x); }
         }
 
@@ -1969,7 +1738,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, y, y); }
         }
 
@@ -1978,7 +1746,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, y, z); }
         }
 
@@ -1987,7 +1754,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, y, w); }
         }
 
@@ -1996,7 +1762,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, z, x); }
         }
 
@@ -2005,7 +1770,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, z, y); }
         }
 
@@ -2014,7 +1778,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, z, z); }
         }
 
@@ -2023,7 +1786,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, z, w); }
         }
 
@@ -2032,9 +1794,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zywx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, w, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; y = value.y; w = value.z; x = value.w; }
         }
 
@@ -2043,7 +1803,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zywy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, w, y); }
         }
 
@@ -2052,7 +1811,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zywz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, w, z); }
         }
 
@@ -2061,7 +1819,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zyww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, y, w, w); }
         }
 
@@ -2070,7 +1827,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, x, x); }
         }
 
@@ -2079,7 +1835,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, x, y); }
         }
 
@@ -2088,7 +1843,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, x, z); }
         }
 
@@ -2097,7 +1851,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, x, w); }
         }
 
@@ -2106,7 +1859,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, y, x); }
         }
 
@@ -2115,7 +1867,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, y, y); }
         }
 
@@ -2124,7 +1875,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, y, z); }
         }
 
@@ -2133,7 +1883,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, y, w); }
         }
 
@@ -2142,7 +1891,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, z, x); }
         }
 
@@ -2151,7 +1899,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, z, y); }
         }
 
@@ -2160,7 +1907,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, z, z); }
         }
 
@@ -2169,7 +1915,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, z, w); }
         }
 
@@ -2178,7 +1923,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, w, x); }
         }
 
@@ -2187,7 +1931,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, w, y); }
         }
 
@@ -2196,7 +1939,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, w, z); }
         }
 
@@ -2205,7 +1947,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zzww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, z, w, w); }
         }
 
@@ -2214,7 +1955,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, x, x); }
         }
 
@@ -2223,9 +1963,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, x, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; w = value.y; x = value.z; y = value.w; }
         }
 
@@ -2234,7 +1972,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, x, z); }
         }
 
@@ -2243,7 +1980,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, x, w); }
         }
 
@@ -2252,9 +1988,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, y, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; w = value.y; y = value.z; x = value.w; }
         }
 
@@ -2263,7 +1997,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, y, y); }
         }
 
@@ -2272,7 +2005,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, y, z); }
         }
 
@@ -2281,7 +2013,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, y, w); }
         }
 
@@ -2290,7 +2021,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, z, x); }
         }
 
@@ -2299,7 +2029,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, z, y); }
         }
 
@@ -2308,7 +2037,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, z, z); }
         }
 
@@ -2317,7 +2045,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, z, w); }
         }
 
@@ -2326,7 +2053,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, w, x); }
         }
 
@@ -2335,7 +2061,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, w, y); }
         }
 
@@ -2344,7 +2069,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, w, z); }
         }
 
@@ -2353,7 +2077,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 zwww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(z, w, w, w); }
         }
 
@@ -2362,7 +2085,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, x, x); }
         }
 
@@ -2371,7 +2093,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, x, y); }
         }
 
@@ -2380,7 +2101,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, x, z); }
         }
 
@@ -2389,7 +2109,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, x, w); }
         }
 
@@ -2398,7 +2117,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, y, x); }
         }
 
@@ -2407,7 +2125,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, y, y); }
         }
 
@@ -2416,9 +2133,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, y, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; x = value.y; y = value.z; z = value.w; }
         }
 
@@ -2427,7 +2142,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, y, w); }
         }
 
@@ -2436,7 +2150,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, z, x); }
         }
 
@@ -2445,9 +2158,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, z, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; x = value.y; z = value.z; y = value.w; }
         }
 
@@ -2456,7 +2167,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, z, z); }
         }
 
@@ -2465,7 +2175,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, z, w); }
         }
 
@@ -2474,7 +2183,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, w, x); }
         }
 
@@ -2483,7 +2191,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, w, y); }
         }
 
@@ -2492,7 +2199,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, w, z); }
         }
 
@@ -2501,7 +2207,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wxww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, x, w, w); }
         }
 
@@ -2510,7 +2215,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, x, x); }
         }
 
@@ -2519,7 +2223,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, x, y); }
         }
 
@@ -2528,9 +2231,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, x, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; y = value.y; x = value.z; z = value.w; }
         }
 
@@ -2539,7 +2240,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, x, w); }
         }
 
@@ -2548,7 +2248,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, y, x); }
         }
 
@@ -2557,7 +2256,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, y, y); }
         }
 
@@ -2566,7 +2264,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, y, z); }
         }
 
@@ -2575,7 +2272,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, y, w); }
         }
 
@@ -2584,9 +2280,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, z, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; y = value.y; z = value.z; x = value.w; }
         }
 
@@ -2595,7 +2289,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, z, y); }
         }
 
@@ -2604,7 +2297,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, z, z); }
         }
 
@@ -2613,7 +2305,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, z, w); }
         }
 
@@ -2622,7 +2313,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wywx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, w, x); }
         }
 
@@ -2631,7 +2321,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wywy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, w, y); }
         }
 
@@ -2640,7 +2329,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wywz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, w, z); }
         }
 
@@ -2649,7 +2337,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wyww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, y, w, w); }
         }
 
@@ -2658,7 +2345,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, x, x); }
         }
 
@@ -2667,9 +2353,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, x, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; z = value.y; x = value.z; y = value.w; }
         }
 
@@ -2678,7 +2362,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, x, z); }
         }
 
@@ -2687,7 +2370,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, x, w); }
         }
 
@@ -2696,9 +2378,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, y, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; z = value.y; y = value.z; x = value.w; }
         }
 
@@ -2707,7 +2387,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, y, y); }
         }
 
@@ -2716,7 +2395,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, y, z); }
         }
 
@@ -2725,7 +2403,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, y, w); }
         }
 
@@ -2734,7 +2411,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, z, x); }
         }
 
@@ -2743,7 +2419,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, z, y); }
         }
 
@@ -2752,7 +2427,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, z, z); }
         }
 
@@ -2761,7 +2435,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, z, w); }
         }
 
@@ -2770,7 +2443,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, w, x); }
         }
 
@@ -2779,7 +2451,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, w, y); }
         }
 
@@ -2788,7 +2459,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, w, z); }
         }
 
@@ -2797,7 +2467,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wzww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, z, w, w); }
         }
 
@@ -2806,7 +2475,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, x, x); }
         }
 
@@ -2815,7 +2483,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, x, y); }
         }
 
@@ -2824,7 +2491,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, x, z); }
         }
 
@@ -2833,7 +2499,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, x, w); }
         }
 
@@ -2842,7 +2507,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, y, x); }
         }
 
@@ -2851,7 +2515,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, y, y); }
         }
 
@@ -2860,7 +2523,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, y, z); }
         }
 
@@ -2869,7 +2531,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, y, w); }
         }
 
@@ -2878,7 +2539,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, z, x); }
         }
 
@@ -2887,7 +2547,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, z, y); }
         }
 
@@ -2896,7 +2555,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, z, z); }
         }
 
@@ -2905,7 +2563,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, z, w); }
         }
 
@@ -2914,7 +2571,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, w, x); }
         }
 
@@ -2923,7 +2579,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, w, y); }
         }
 
@@ -2932,7 +2587,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, w, z); }
         }
 
@@ -2941,7 +2595,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double4 wwww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double4(w, w, w, w); }
         }
 
@@ -2950,7 +2603,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, x, x); }
         }
 
@@ -2959,7 +2611,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, x, y); }
         }
 
@@ -2968,7 +2619,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, x, z); }
         }
 
@@ -2977,7 +2627,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, x, w); }
         }
 
@@ -2986,7 +2635,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, y, x); }
         }
 
@@ -2995,7 +2643,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, y, y); }
         }
 
@@ -3004,9 +2651,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, y, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; y = value.y; z = value.z; }
         }
 
@@ -3015,9 +2660,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, y, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; y = value.y; w = value.z; }
         }
 
@@ -3026,7 +2669,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, z, x); }
         }
 
@@ -3035,9 +2677,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, z, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; z = value.y; y = value.z; }
         }
 
@@ -3046,7 +2686,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, z, z); }
         }
 
@@ -3055,9 +2694,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, z, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; z = value.y; w = value.z; }
         }
 
@@ -3066,7 +2703,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, w, x); }
         }
 
@@ -3075,9 +2711,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, w, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; w = value.y; y = value.z; }
         }
 
@@ -3086,9 +2720,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, w, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; w = value.y; z = value.z; }
         }
 
@@ -3097,7 +2729,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 xww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(x, w, w); }
         }
 
@@ -3106,7 +2737,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, x, x); }
         }
 
@@ -3115,7 +2745,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, x, y); }
         }
 
@@ -3124,9 +2753,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, x, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; x = value.y; z = value.z; }
         }
 
@@ -3135,9 +2762,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, x, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; x = value.y; w = value.z; }
         }
 
@@ -3146,7 +2771,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, y, x); }
         }
 
@@ -3155,7 +2779,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, y, y); }
         }
 
@@ -3164,7 +2787,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, y, z); }
         }
 
@@ -3173,7 +2795,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, y, w); }
         }
 
@@ -3182,9 +2803,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, z, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; z = value.y; x = value.z; }
         }
 
@@ -3193,7 +2812,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, z, y); }
         }
 
@@ -3202,7 +2820,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, z, z); }
         }
 
@@ -3211,9 +2828,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, z, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; z = value.y; w = value.z; }
         }
 
@@ -3222,9 +2837,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 ywx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, w, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; w = value.y; x = value.z; }
         }
 
@@ -3233,7 +2846,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 ywy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, w, y); }
         }
 
@@ -3242,9 +2854,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 ywz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, w, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; w = value.y; z = value.z; }
         }
 
@@ -3253,7 +2863,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 yww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(y, w, w); }
         }
 
@@ -3262,7 +2871,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, x, x); }
         }
 
@@ -3271,9 +2879,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, x, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; x = value.y; y = value.z; }
         }
 
@@ -3282,7 +2888,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, x, z); }
         }
 
@@ -3291,9 +2896,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, x, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; x = value.y; w = value.z; }
         }
 
@@ -3302,9 +2905,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, y, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; y = value.y; x = value.z; }
         }
 
@@ -3313,7 +2914,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, y, y); }
         }
 
@@ -3322,7 +2922,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, y, z); }
         }
 
@@ -3331,9 +2930,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, y, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; y = value.y; w = value.z; }
         }
 
@@ -3342,7 +2939,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, z, x); }
         }
 
@@ -3351,7 +2947,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, z, y); }
         }
 
@@ -3360,7 +2955,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, z, z); }
         }
 
@@ -3369,7 +2963,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, z, w); }
         }
 
@@ -3378,9 +2971,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, w, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; w = value.y; x = value.z; }
         }
 
@@ -3389,9 +2980,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, w, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; w = value.y; y = value.z; }
         }
 
@@ -3400,7 +2989,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, w, z); }
         }
 
@@ -3409,7 +2997,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 zww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(z, w, w); }
         }
 
@@ -3418,7 +3005,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wxx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, x, x); }
         }
 
@@ -3427,9 +3013,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wxy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, x, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; x = value.y; y = value.z; }
         }
 
@@ -3438,9 +3022,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wxz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, x, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; x = value.y; z = value.z; }
         }
 
@@ -3449,7 +3031,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wxw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, x, w); }
         }
 
@@ -3458,9 +3039,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wyx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, y, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; y = value.y; x = value.z; }
         }
 
@@ -3469,7 +3048,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wyy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, y, y); }
         }
 
@@ -3478,9 +3056,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wyz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, y, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; y = value.y; z = value.z; }
         }
 
@@ -3489,7 +3065,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wyw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, y, w); }
         }
 
@@ -3498,9 +3073,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wzx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, z, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; z = value.y; x = value.z; }
         }
 
@@ -3509,9 +3082,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wzy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, z, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; z = value.y; y = value.z; }
         }
 
@@ -3520,7 +3091,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wzz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, z, z); }
         }
 
@@ -3529,7 +3099,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wzw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, z, w); }
         }
 
@@ -3538,7 +3107,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wwx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, w, x); }
         }
 
@@ -3547,7 +3115,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wwy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, w, y); }
         }
 
@@ -3556,7 +3123,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 wwz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, w, z); }
         }
 
@@ -3565,7 +3131,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double3 www
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double3(w, w, w); }
         }
 
@@ -3574,7 +3139,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 xx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(x, x); }
         }
 
@@ -3583,9 +3147,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 xy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(x, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; y = value.y; }
         }
 
@@ -3594,9 +3156,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 xz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(x, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; z = value.y; }
         }
 
@@ -3605,9 +3165,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 xw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(x, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { x = value.x; w = value.y; }
         }
 
@@ -3616,9 +3174,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 yx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(y, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; x = value.y; }
         }
 
@@ -3627,7 +3183,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 yy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(y, y); }
         }
 
@@ -3636,9 +3191,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 yz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(y, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; z = value.y; }
         }
 
@@ -3647,9 +3200,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 yw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(y, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { y = value.x; w = value.y; }
         }
 
@@ -3658,9 +3209,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 zx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(z, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; x = value.y; }
         }
 
@@ -3669,9 +3218,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 zy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(z, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; y = value.y; }
         }
 
@@ -3680,7 +3227,6 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 zz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(z, z); }
         }
 
@@ -3689,9 +3235,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 zw
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(z, w); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { z = value.x; w = value.y; }
         }
 
@@ -3700,9 +3244,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 wx
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(w, x); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; x = value.y; }
         }
 
@@ -3711,9 +3253,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 wy
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(w, y); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; y = value.y; }
         }
 
@@ -3722,9 +3262,7 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 wz
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(w, z); }
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set { w = value.x; z = value.y; }
         }
 
@@ -3733,54 +3271,30 @@ namespace Unity.Mathematics
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double2 ww
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get { return new double2(w, w); }
         }
 
 
 
-        /// <summary>Returns the double element at a specified index.</summary>
-        unsafe public double this[int index]
-        {
-            get
-            {
-#if ENABLE_UNITY_COLLECTIONS_CHECKS
-                if ((uint)index >= 4)
-                    throw new System.ArgumentException("index must be between[0...3]");
-#endif
-                fixed (double4* array = &this) { return ((double*)array)[index]; }
-            }
-            set
-            {
-#if ENABLE_UNITY_COLLECTIONS_CHECKS
-                if ((uint)index >= 4)
-                    throw new System.ArgumentException("index must be between[0...3]");
-#endif
-                fixed (double* array = &x) { array[index] = value; }
-            }
-        }
 
         /// <summary>Returns true if the double4 is equal to a given double4, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(double4 rhs) { return x == rhs.x && y == rhs.y && z == rhs.z && w == rhs.w; }
 
         /// <summary>Returns true if the double4 is equal to a given double4, false otherwise.</summary>
         /// <param name="o">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        public override bool Equals(object o) { return o is double4 converted && Equals(converted); }
+        public override bool Equals(object o) { return o is double4 && Equals((double4)o); }
 
 
         /// <summary>Returns a hash code for the double4.</summary>
         /// <returns>The computed hash code.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() { return (int)math.hash(this); }
 
 
         /// <summary>Returns a string representation of the double4.</summary>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()
         {
             return string.Format("double4({0}, {1}, {2}, {3})", x, y, z, w);
@@ -3790,7 +3304,6 @@ namespace Unity.Mathematics
         /// <param name="format">Format string to use during string formatting.</param>
         /// <param name="formatProvider">Format provider to use during string formatting.</param>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return string.Format("double4({0}, {1}, {2}, {3})", x.ToString(format, formatProvider), y.ToString(format, formatProvider), z.ToString(format, formatProvider), w.ToString(format, formatProvider));
@@ -3821,7 +3334,6 @@ namespace Unity.Mathematics
         /// <param name="z">The constructed vector's z component will be set to this value.</param>
         /// <param name="w">The constructed vector's w component will be set to this value.</param>
         /// <returns>double4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double x, double y, double z, double w) { return new double4(x, y, z, w); }
 
         /// <summary>Returns a double4 vector constructed from two double values and a double2 vector.</summary>
@@ -3829,7 +3341,6 @@ namespace Unity.Mathematics
         /// <param name="y">The constructed vector's y component will be set to this value.</param>
         /// <param name="zw">The constructed vector's zw components will be set to this value.</param>
         /// <returns>double4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double x, double y, double2 zw) { return new double4(x, y, zw); }
 
         /// <summary>Returns a double4 vector constructed from a double value, a double2 vector and a double value.</summary>
@@ -3837,14 +3348,12 @@ namespace Unity.Mathematics
         /// <param name="yz">The constructed vector's yz components will be set to this value.</param>
         /// <param name="w">The constructed vector's w component will be set to this value.</param>
         /// <returns>double4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double x, double2 yz, double w) { return new double4(x, yz, w); }
 
         /// <summary>Returns a double4 vector constructed from a double value and a double3 vector.</summary>
         /// <param name="x">The constructed vector's x component will be set to this value.</param>
         /// <param name="yzw">The constructed vector's yzw components will be set to this value.</param>
         /// <returns>double4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double x, double3 yzw) { return new double4(x, yzw); }
 
         /// <summary>Returns a double4 vector constructed from a double2 vector and two double values.</summary>
@@ -3852,99 +3361,83 @@ namespace Unity.Mathematics
         /// <param name="z">The constructed vector's z component will be set to this value.</param>
         /// <param name="w">The constructed vector's w component will be set to this value.</param>
         /// <returns>double4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double2 xy, double z, double w) { return new double4(xy, z, w); }
 
         /// <summary>Returns a double4 vector constructed from two double2 vectors.</summary>
         /// <param name="xy">The constructed vector's xy components will be set to this value.</param>
         /// <param name="zw">The constructed vector's zw components will be set to this value.</param>
         /// <returns>double4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double2 xy, double2 zw) { return new double4(xy, zw); }
 
         /// <summary>Returns a double4 vector constructed from a double3 vector and a double value.</summary>
         /// <param name="xyz">The constructed vector's xyz components will be set to this value.</param>
         /// <param name="w">The constructed vector's w component will be set to this value.</param>
         /// <returns>double4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double3 xyz, double w) { return new double4(xyz, w); }
 
         /// <summary>Returns a double4 vector constructed from a double4 vector.</summary>
         /// <param name="xyzw">The constructed vector's xyzw components will be set to this value.</param>
         /// <returns>double4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double4 xyzw) { return new double4(xyzw); }
 
         /// <summary>Returns a double4 vector constructed from a single double value by assigning it to every component.</summary>
         /// <param name="v">double to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(double v) { return new double4(v); }
 
         /// <summary>Returns a double4 vector constructed from a single bool value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">bool to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(bool v) { return new double4(v); }
 
         /// <summary>Return a double4 vector constructed from a bool4 vector by componentwise conversion.</summary>
         /// <param name="v">bool4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(bool4 v) { return new double4(v); }
 
         /// <summary>Returns a double4 vector constructed from a single int value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">int to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(int v) { return new double4(v); }
 
         /// <summary>Return a double4 vector constructed from a int4 vector by componentwise conversion.</summary>
         /// <param name="v">int4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(int4 v) { return new double4(v); }
 
         /// <summary>Returns a double4 vector constructed from a single uint value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">uint to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(uint v) { return new double4(v); }
 
         /// <summary>Return a double4 vector constructed from a uint4 vector by componentwise conversion.</summary>
         /// <param name="v">uint4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(uint4 v) { return new double4(v); }
 
         /// <summary>Returns a double4 vector constructed from a single half value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">half to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(half v) { return new double4(v); }
 
         /// <summary>Return a double4 vector constructed from a half4 vector by componentwise conversion.</summary>
         /// <param name="v">half4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(half4 v) { return new double4(v); }
 
         /// <summary>Returns a double4 vector constructed from a single float value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">float to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(float v) { return new double4(v); }
 
         /// <summary>Return a double4 vector constructed from a float4 vector by componentwise conversion.</summary>
         /// <param name="v">float4 to convert to double4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 double4(float4 v) { return new double4(v); }
 
         /// <summary>Returns a uint hash code of a double4 vector.</summary>
         /// <param name="v">Vector value to hash.</param>
         /// <returns>uint hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint hash(double4 v)
         {
             return csum(fold_to_uint(v) * uint4(0x9F1C739Bu, 0x4B1BD187u, 0x9DF50593u, 0xF18EEB85u)) + 0x9E19BFC3u;
@@ -3957,7 +3450,6 @@ namespace Unity.Mathematics
         /// </summary>
         /// <param name="v">Vector value to hash.</param>
         /// <returns>uint4 hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 hashwide(double4 v)
         {
             return (fold_to_uint(v) * uint4(0x8196B06Fu, 0xD24EFA19u, 0x7D8048BBu, 0x713BD06Fu)) + 0x753AD6ADu;
@@ -3968,7 +3460,6 @@ namespace Unity.Mathematics
         /// <param name="right">double4 to use as the right argument of the shuffle operation.</param>
         /// <param name="x">The ShuffleComponent to use when setting the resulting double.</param>
         /// <returns>double result of the shuffle operation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double shuffle(double4 left, double4 right, ShuffleComponent x)
         {
             return select_shuffle_component(left, right, x);
@@ -3980,7 +3471,6 @@ namespace Unity.Mathematics
         /// <param name="x">The ShuffleComponent to use when setting the resulting double2 x component.</param>
         /// <param name="y">The ShuffleComponent to use when setting the resulting double2 y component.</param>
         /// <returns>double2 result of the shuffle operation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double2 shuffle(double4 left, double4 right, ShuffleComponent x, ShuffleComponent y)
         {
             return double2(
@@ -3995,7 +3485,6 @@ namespace Unity.Mathematics
         /// <param name="y">The ShuffleComponent to use when setting the resulting double3 y component.</param>
         /// <param name="z">The ShuffleComponent to use when setting the resulting double3 z component.</param>
         /// <returns>double3 result of the shuffle operation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3 shuffle(double4 left, double4 right, ShuffleComponent x, ShuffleComponent y, ShuffleComponent z)
         {
             return double3(
@@ -4012,7 +3501,6 @@ namespace Unity.Mathematics
         /// <param name="z">The ShuffleComponent to use when setting the resulting double4 z component.</param>
         /// <param name="w">The ShuffleComponent to use when setting the resulting double4 w component.</param>
         /// <returns>double4 result of the shuffle operation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 shuffle(double4 left, double4 right, ShuffleComponent x, ShuffleComponent y, ShuffleComponent z, ShuffleComponent w)
         {
             return double4(
@@ -4022,7 +3510,6 @@ namespace Unity.Mathematics
                 select_shuffle_component(left, right, w));
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static double select_shuffle_component(double4 a, double4 b, ShuffleComponent component)
         {
             switch(component)

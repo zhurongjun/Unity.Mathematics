@@ -230,3 +230,4 @@ ext/llvm/win64_release/
 ext/llvm/macos/
 *.idea
 .DS_Store
+src/packages/

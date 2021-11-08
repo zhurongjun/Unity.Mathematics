@@ -34,7 +34,6 @@ namespace Unity.Mathematics
         /// <param name="c1">The matrix column c1 will be set to this value.</param>
         /// <param name="c2">The matrix column c2 will be set to this value.</param>
         /// <param name="c3">The matrix column c3 will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool2x4(bool2 c0, bool2 c1, bool2 c2, bool2 c3)
         {
             this.c0 = c0;
@@ -52,7 +51,6 @@ namespace Unity.Mathematics
         /// <param name="m11">The matrix at row 1, column 1 will be set to this value.</param>
         /// <param name="m12">The matrix at row 1, column 2 will be set to this value.</param>
         /// <param name="m13">The matrix at row 1, column 3 will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool2x4(bool m00, bool m01, bool m02, bool m03,
                        bool m10, bool m11, bool m12, bool m13)
         {
@@ -64,7 +62,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a bool2x4 matrix from a single bool value by assigning it to every component.</summary>
         /// <param name="v">bool to convert to bool2x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool2x4(bool v)
         {
             this.c0 = v;
@@ -77,7 +74,6 @@ namespace Unity.Mathematics
         /// <summary>Implicitly converts a single bool value to a bool2x4 matrix by assigning it to every component.</summary>
         /// <param name="v">bool to convert to bool2x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator bool2x4(bool v) { return new bool2x4(v); }
 
 
@@ -85,21 +81,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise equality.</param>
         /// <returns>bool2x4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator == (bool2x4 lhs, bool2x4 rhs) { return new bool2x4 (lhs.c0 == rhs.c0, lhs.c1 == rhs.c1, lhs.c2 == rhs.c2, lhs.c3 == rhs.c3); }
 
         /// <summary>Returns the result of a componentwise equality operation on a bool2x4 matrix and a bool value.</summary>
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side bool to use to compute componentwise equality.</param>
         /// <returns>bool2x4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator == (bool2x4 lhs, bool rhs) { return new bool2x4 (lhs.c0 == rhs, lhs.c1 == rhs, lhs.c2 == rhs, lhs.c3 == rhs); }
 
         /// <summary>Returns the result of a componentwise equality operation on a bool value and a bool2x4 matrix.</summary>
         /// <param name="lhs">Left hand side bool to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise equality.</param>
         /// <returns>bool2x4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator == (bool lhs, bool2x4 rhs) { return new bool2x4 (lhs == rhs.c0, lhs == rhs.c1, lhs == rhs.c2, lhs == rhs.c3); }
 
 
@@ -107,28 +100,24 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise not equal.</param>
         /// <returns>bool2x4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator != (bool2x4 lhs, bool2x4 rhs) { return new bool2x4 (lhs.c0 != rhs.c0, lhs.c1 != rhs.c1, lhs.c2 != rhs.c2, lhs.c3 != rhs.c3); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a bool2x4 matrix and a bool value.</summary>
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side bool to use to compute componentwise not equal.</param>
         /// <returns>bool2x4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator != (bool2x4 lhs, bool rhs) { return new bool2x4 (lhs.c0 != rhs, lhs.c1 != rhs, lhs.c2 != rhs, lhs.c3 != rhs); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a bool value and a bool2x4 matrix.</summary>
         /// <param name="lhs">Left hand side bool to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise not equal.</param>
         /// <returns>bool2x4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator != (bool lhs, bool2x4 rhs) { return new bool2x4 (lhs != rhs.c0, lhs != rhs.c1, lhs != rhs.c2, lhs != rhs.c3); }
 
 
         /// <summary>Returns the result of a componentwise not operation on a bool2x4 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise not.</param>
         /// <returns>bool2x4 result of the componentwise not.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator ! (bool2x4 val) { return new bool2x4 (!val.c0, !val.c1, !val.c2, !val.c3); }
 
 
@@ -136,21 +125,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise bitwise and.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise bitwise and.</param>
         /// <returns>bool2x4 result of the componentwise bitwise and.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator & (bool2x4 lhs, bool2x4 rhs) { return new bool2x4 (lhs.c0 & rhs.c0, lhs.c1 & rhs.c1, lhs.c2 & rhs.c2, lhs.c3 & rhs.c3); }
 
         /// <summary>Returns the result of a componentwise bitwise and operation on a bool2x4 matrix and a bool value.</summary>
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise bitwise and.</param>
         /// <param name="rhs">Right hand side bool to use to compute componentwise bitwise and.</param>
         /// <returns>bool2x4 result of the componentwise bitwise and.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator & (bool2x4 lhs, bool rhs) { return new bool2x4 (lhs.c0 & rhs, lhs.c1 & rhs, lhs.c2 & rhs, lhs.c3 & rhs); }
 
         /// <summary>Returns the result of a componentwise bitwise and operation on a bool value and a bool2x4 matrix.</summary>
         /// <param name="lhs">Left hand side bool to use to compute componentwise bitwise and.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise bitwise and.</param>
         /// <returns>bool2x4 result of the componentwise bitwise and.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator & (bool lhs, bool2x4 rhs) { return new bool2x4 (lhs & rhs.c0, lhs & rhs.c1, lhs & rhs.c2, lhs & rhs.c3); }
 
 
@@ -158,21 +144,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise bitwise or.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise bitwise or.</param>
         /// <returns>bool2x4 result of the componentwise bitwise or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator | (bool2x4 lhs, bool2x4 rhs) { return new bool2x4 (lhs.c0 | rhs.c0, lhs.c1 | rhs.c1, lhs.c2 | rhs.c2, lhs.c3 | rhs.c3); }
 
         /// <summary>Returns the result of a componentwise bitwise or operation on a bool2x4 matrix and a bool value.</summary>
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise bitwise or.</param>
         /// <param name="rhs">Right hand side bool to use to compute componentwise bitwise or.</param>
         /// <returns>bool2x4 result of the componentwise bitwise or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator | (bool2x4 lhs, bool rhs) { return new bool2x4 (lhs.c0 | rhs, lhs.c1 | rhs, lhs.c2 | rhs, lhs.c3 | rhs); }
 
         /// <summary>Returns the result of a componentwise bitwise or operation on a bool value and a bool2x4 matrix.</summary>
         /// <param name="lhs">Left hand side bool to use to compute componentwise bitwise or.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise bitwise or.</param>
         /// <returns>bool2x4 result of the componentwise bitwise or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator | (bool lhs, bool2x4 rhs) { return new bool2x4 (lhs | rhs.c0, lhs | rhs.c1, lhs | rhs.c2, lhs | rhs.c3); }
 
 
@@ -180,59 +163,41 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise bitwise exclusive or.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise bitwise exclusive or.</param>
         /// <returns>bool2x4 result of the componentwise bitwise exclusive or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator ^ (bool2x4 lhs, bool2x4 rhs) { return new bool2x4 (lhs.c0 ^ rhs.c0, lhs.c1 ^ rhs.c1, lhs.c2 ^ rhs.c2, lhs.c3 ^ rhs.c3); }
 
         /// <summary>Returns the result of a componentwise bitwise exclusive or operation on a bool2x4 matrix and a bool value.</summary>
         /// <param name="lhs">Left hand side bool2x4 to use to compute componentwise bitwise exclusive or.</param>
         /// <param name="rhs">Right hand side bool to use to compute componentwise bitwise exclusive or.</param>
         /// <returns>bool2x4 result of the componentwise bitwise exclusive or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator ^ (bool2x4 lhs, bool rhs) { return new bool2x4 (lhs.c0 ^ rhs, lhs.c1 ^ rhs, lhs.c2 ^ rhs, lhs.c3 ^ rhs); }
 
         /// <summary>Returns the result of a componentwise bitwise exclusive or operation on a bool value and a bool2x4 matrix.</summary>
         /// <param name="lhs">Left hand side bool to use to compute componentwise bitwise exclusive or.</param>
         /// <param name="rhs">Right hand side bool2x4 to use to compute componentwise bitwise exclusive or.</param>
         /// <returns>bool2x4 result of the componentwise bitwise exclusive or.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 operator ^ (bool lhs, bool2x4 rhs) { return new bool2x4 (lhs ^ rhs.c0, lhs ^ rhs.c1, lhs ^ rhs.c2, lhs ^ rhs.c3); }
 
 
 
-        /// <summary>Returns the bool2 element at a specified index.</summary>
-        unsafe public ref bool2 this[int index]
-        {
-            get
-            {
-#if ENABLE_UNITY_COLLECTIONS_CHECKS
-                if ((uint)index >= 4)
-                    throw new System.ArgumentException("index must be between[0...3]");
-#endif
-                fixed (bool2x4* array = &this) { return ref ((bool2*)array)[index]; }
-            }
-        }
 
         /// <summary>Returns true if the bool2x4 is equal to a given bool2x4, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(bool2x4 rhs) { return c0.Equals(rhs.c0) && c1.Equals(rhs.c1) && c2.Equals(rhs.c2) && c3.Equals(rhs.c3); }
 
         /// <summary>Returns true if the bool2x4 is equal to a given bool2x4, false otherwise.</summary>
         /// <param name="o">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        public override bool Equals(object o) { return o is bool2x4 converted && Equals(converted); }
+        public override bool Equals(object o) { return o is bool2x4 && Equals((bool2x4)o); }
 
 
         /// <summary>Returns a hash code for the bool2x4.</summary>
         /// <returns>The computed hash code.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() { return (int)math.hash(this); }
 
 
         /// <summary>Returns a string representation of the bool2x4.</summary>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()
         {
             return string.Format("bool2x4({0}, {1}, {2}, {3},  {4}, {5}, {6}, {7})", c0.x, c1.x, c2.x, c3.x, c0.y, c1.y, c2.y, c3.y);
@@ -248,7 +213,6 @@ namespace Unity.Mathematics
         /// <param name="c2">The matrix column c2 will be set to this value.</param>
         /// <param name="c3">The matrix column c3 will be set to this value.</param>
         /// <returns>bool2x4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 bool2x4(bool2 c0, bool2 c1, bool2 c2, bool2 c3) { return new bool2x4(c0, c1, c2, c3); }
 
         /// <summary>Returns a bool2x4 matrix constructed from from 8 bool values given in row-major order.</summary>
@@ -261,7 +225,6 @@ namespace Unity.Mathematics
         /// <param name="m12">The matrix at row 1, column 2 will be set to this value.</param>
         /// <param name="m13">The matrix at row 1, column 3 will be set to this value.</param>
         /// <returns>bool2x4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 bool2x4(bool m00, bool m01, bool m02, bool m03,
                                       bool m10, bool m11, bool m12, bool m13)
         {
@@ -272,13 +235,11 @@ namespace Unity.Mathematics
         /// <summary>Returns a bool2x4 matrix constructed from a single bool value by assigning it to every component.</summary>
         /// <param name="v">bool to convert to bool2x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2x4 bool2x4(bool v) { return new bool2x4(v); }
 
         /// <summary>Return the bool4x2 transpose of a bool2x4 matrix.</summary>
         /// <param name="v">Value to transpose.</param>
         /// <returns>Transposed value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4x2 transpose(bool2x4 v)
         {
             return bool4x2(
@@ -291,7 +252,6 @@ namespace Unity.Mathematics
         /// <summary>Returns a uint hash code of a bool2x4 matrix.</summary>
         /// <param name="v">Matrix value to hash.</param>
         /// <returns>uint hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint hash(bool2x4 v)
         {
             return csum(select(uint2(0x45A22087u, 0xFC104C3Bu), uint2(0x5FFF6B19u, 0x5E6CBF3Bu), v.c0) +
@@ -307,7 +267,6 @@ namespace Unity.Mathematics
         /// </summary>
         /// <param name="v">Matrix value to hash.</param>
         /// <returns>uint2 hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 hashwide(bool2x4 v)
         {
             return (select(uint2(0x93C30C2Bu, 0xDCAF0351u), uint2(0x6E050B01u, 0x750FDBF5u), v.c0) +

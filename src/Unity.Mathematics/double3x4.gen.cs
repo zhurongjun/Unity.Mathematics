@@ -36,7 +36,6 @@ namespace Unity.Mathematics
         /// <param name="c1">The matrix column c1 will be set to this value.</param>
         /// <param name="c2">The matrix column c2 will be set to this value.</param>
         /// <param name="c3">The matrix column c3 will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(double3 c0, double3 c1, double3 c2, double3 c3)
         {
             this.c0 = c0;
@@ -58,7 +57,6 @@ namespace Unity.Mathematics
         /// <param name="m21">The matrix at row 2, column 1 will be set to this value.</param>
         /// <param name="m22">The matrix at row 2, column 2 will be set to this value.</param>
         /// <param name="m23">The matrix at row 2, column 3 will be set to this value.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(double m00, double m01, double m02, double m03,
                          double m10, double m11, double m12, double m13,
                          double m20, double m21, double m22, double m23)
@@ -71,7 +69,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a single double value by assigning it to every component.</summary>
         /// <param name="v">double to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(double v)
         {
             this.c0 = v;
@@ -82,7 +79,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a single bool value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">bool to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(bool v)
         {
             this.c0 = math.select(new double3(0.0), new double3(1.0), v);
@@ -93,7 +89,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a bool3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">bool3x4 to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(bool3x4 v)
         {
             this.c0 = math.select(new double3(0.0), new double3(1.0), v.c0);
@@ -104,7 +99,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a single int value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">int to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(int v)
         {
             this.c0 = v;
@@ -115,7 +109,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a int3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">int3x4 to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(int3x4 v)
         {
             this.c0 = v.c0;
@@ -126,7 +119,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a single uint value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">uint to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(uint v)
         {
             this.c0 = v;
@@ -137,7 +129,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a uint3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">uint3x4 to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(uint3x4 v)
         {
             this.c0 = v.c0;
@@ -148,7 +139,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a single float value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">float to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(float v)
         {
             this.c0 = v;
@@ -159,7 +149,6 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a double3x4 matrix from a float3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">float3x4 to convert to double3x4</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public double3x4(float3x4 v)
         {
             this.c0 = v.c0;
@@ -172,55 +161,46 @@ namespace Unity.Mathematics
         /// <summary>Implicitly converts a single double value to a double3x4 matrix by assigning it to every component.</summary>
         /// <param name="v">double to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double3x4(double v) { return new double3x4(v); }
 
         /// <summary>Explicitly converts a single bool value to a double3x4 matrix by converting it to double and assigning it to every component.</summary>
         /// <param name="v">bool to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator double3x4(bool v) { return new double3x4(v); }
 
         /// <summary>Explicitly converts a bool3x4 matrix to a double3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">bool3x4 to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator double3x4(bool3x4 v) { return new double3x4(v); }
 
         /// <summary>Implicitly converts a single int value to a double3x4 matrix by converting it to double and assigning it to every component.</summary>
         /// <param name="v">int to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double3x4(int v) { return new double3x4(v); }
 
         /// <summary>Implicitly converts a int3x4 matrix to a double3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">int3x4 to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double3x4(int3x4 v) { return new double3x4(v); }
 
         /// <summary>Implicitly converts a single uint value to a double3x4 matrix by converting it to double and assigning it to every component.</summary>
         /// <param name="v">uint to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double3x4(uint v) { return new double3x4(v); }
 
         /// <summary>Implicitly converts a uint3x4 matrix to a double3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">uint3x4 to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double3x4(uint3x4 v) { return new double3x4(v); }
 
         /// <summary>Implicitly converts a single float value to a double3x4 matrix by converting it to double and assigning it to every component.</summary>
         /// <param name="v">float to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double3x4(float v) { return new double3x4(v); }
 
         /// <summary>Implicitly converts a float3x4 matrix to a double3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">float3x4 to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double3x4(float3x4 v) { return new double3x4(v); }
 
 
@@ -228,21 +208,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise multiplication.</param>
         /// <returns>double3x4 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator * (double3x4 lhs, double3x4 rhs) { return new double3x4 (lhs.c0 * rhs.c0, lhs.c1 * rhs.c1, lhs.c2 * rhs.c2, lhs.c3 * rhs.c3); }
 
         /// <summary>Returns the result of a componentwise multiplication operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise multiplication.</param>
         /// <returns>double3x4 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator * (double3x4 lhs, double rhs) { return new double3x4 (lhs.c0 * rhs, lhs.c1 * rhs, lhs.c2 * rhs, lhs.c3 * rhs); }
 
         /// <summary>Returns the result of a componentwise multiplication operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise multiplication.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise multiplication.</param>
         /// <returns>double3x4 result of the componentwise multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator * (double lhs, double3x4 rhs) { return new double3x4 (lhs * rhs.c0, lhs * rhs.c1, lhs * rhs.c2, lhs * rhs.c3); }
 
 
@@ -250,21 +227,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise addition.</param>
         /// <returns>double3x4 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator + (double3x4 lhs, double3x4 rhs) { return new double3x4 (lhs.c0 + rhs.c0, lhs.c1 + rhs.c1, lhs.c2 + rhs.c2, lhs.c3 + rhs.c3); }
 
         /// <summary>Returns the result of a componentwise addition operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise addition.</param>
         /// <returns>double3x4 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator + (double3x4 lhs, double rhs) { return new double3x4 (lhs.c0 + rhs, lhs.c1 + rhs, lhs.c2 + rhs, lhs.c3 + rhs); }
 
         /// <summary>Returns the result of a componentwise addition operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise addition.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise addition.</param>
         /// <returns>double3x4 result of the componentwise addition.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator + (double lhs, double3x4 rhs) { return new double3x4 (lhs + rhs.c0, lhs + rhs.c1, lhs + rhs.c2, lhs + rhs.c3); }
 
 
@@ -272,21 +246,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise subtraction.</param>
         /// <returns>double3x4 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator - (double3x4 lhs, double3x4 rhs) { return new double3x4 (lhs.c0 - rhs.c0, lhs.c1 - rhs.c1, lhs.c2 - rhs.c2, lhs.c3 - rhs.c3); }
 
         /// <summary>Returns the result of a componentwise subtraction operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise subtraction.</param>
         /// <returns>double3x4 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator - (double3x4 lhs, double rhs) { return new double3x4 (lhs.c0 - rhs, lhs.c1 - rhs, lhs.c2 - rhs, lhs.c3 - rhs); }
 
         /// <summary>Returns the result of a componentwise subtraction operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise subtraction.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise subtraction.</param>
         /// <returns>double3x4 result of the componentwise subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator - (double lhs, double3x4 rhs) { return new double3x4 (lhs - rhs.c0, lhs - rhs.c1, lhs - rhs.c2, lhs - rhs.c3); }
 
 
@@ -294,21 +265,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise division.</param>
         /// <returns>double3x4 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator / (double3x4 lhs, double3x4 rhs) { return new double3x4 (lhs.c0 / rhs.c0, lhs.c1 / rhs.c1, lhs.c2 / rhs.c2, lhs.c3 / rhs.c3); }
 
         /// <summary>Returns the result of a componentwise division operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise division.</param>
         /// <returns>double3x4 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator / (double3x4 lhs, double rhs) { return new double3x4 (lhs.c0 / rhs, lhs.c1 / rhs, lhs.c2 / rhs, lhs.c3 / rhs); }
 
         /// <summary>Returns the result of a componentwise division operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise division.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise division.</param>
         /// <returns>double3x4 result of the componentwise division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator / (double lhs, double3x4 rhs) { return new double3x4 (lhs / rhs.c0, lhs / rhs.c1, lhs / rhs.c2, lhs / rhs.c3); }
 
 
@@ -316,35 +284,30 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise modulus.</param>
         /// <returns>double3x4 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator % (double3x4 lhs, double3x4 rhs) { return new double3x4 (lhs.c0 % rhs.c0, lhs.c1 % rhs.c1, lhs.c2 % rhs.c2, lhs.c3 % rhs.c3); }
 
         /// <summary>Returns the result of a componentwise modulus operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise modulus.</param>
         /// <returns>double3x4 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator % (double3x4 lhs, double rhs) { return new double3x4 (lhs.c0 % rhs, lhs.c1 % rhs, lhs.c2 % rhs, lhs.c3 % rhs); }
 
         /// <summary>Returns the result of a componentwise modulus operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise modulus.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise modulus.</param>
         /// <returns>double3x4 result of the componentwise modulus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator % (double lhs, double3x4 rhs) { return new double3x4 (lhs % rhs.c0, lhs % rhs.c1, lhs % rhs.c2, lhs % rhs.c3); }
 
 
         /// <summary>Returns the result of a componentwise increment operation on a double3x4 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise increment.</param>
         /// <returns>double3x4 result of the componentwise increment.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator ++ (double3x4 val) { return new double3x4 (++val.c0, ++val.c1, ++val.c2, ++val.c3); }
 
 
         /// <summary>Returns the result of a componentwise decrement operation on a double3x4 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise decrement.</param>
         /// <returns>double3x4 result of the componentwise decrement.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator -- (double3x4 val) { return new double3x4 (--val.c0, --val.c1, --val.c2, --val.c3); }
 
 
@@ -352,21 +315,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise less than.</param>
         /// <returns>bool3x4 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator < (double3x4 lhs, double3x4 rhs) { return new bool3x4 (lhs.c0 < rhs.c0, lhs.c1 < rhs.c1, lhs.c2 < rhs.c2, lhs.c3 < rhs.c3); }
 
         /// <summary>Returns the result of a componentwise less than operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise less than.</param>
         /// <returns>bool3x4 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator < (double3x4 lhs, double rhs) { return new bool3x4 (lhs.c0 < rhs, lhs.c1 < rhs, lhs.c2 < rhs, lhs.c3 < rhs); }
 
         /// <summary>Returns the result of a componentwise less than operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise less than.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise less than.</param>
         /// <returns>bool3x4 result of the componentwise less than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator < (double lhs, double3x4 rhs) { return new bool3x4 (lhs < rhs.c0, lhs < rhs.c1, lhs < rhs.c2, lhs < rhs.c3); }
 
 
@@ -374,21 +334,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise less or equal.</param>
         /// <returns>bool3x4 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator <= (double3x4 lhs, double3x4 rhs) { return new bool3x4 (lhs.c0 <= rhs.c0, lhs.c1 <= rhs.c1, lhs.c2 <= rhs.c2, lhs.c3 <= rhs.c3); }
 
         /// <summary>Returns the result of a componentwise less or equal operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise less or equal.</param>
         /// <returns>bool3x4 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator <= (double3x4 lhs, double rhs) { return new bool3x4 (lhs.c0 <= rhs, lhs.c1 <= rhs, lhs.c2 <= rhs, lhs.c3 <= rhs); }
 
         /// <summary>Returns the result of a componentwise less or equal operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise less or equal.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise less or equal.</param>
         /// <returns>bool3x4 result of the componentwise less or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator <= (double lhs, double3x4 rhs) { return new bool3x4 (lhs <= rhs.c0, lhs <= rhs.c1, lhs <= rhs.c2, lhs <= rhs.c3); }
 
 
@@ -396,21 +353,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise greater than.</param>
         /// <returns>bool3x4 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator > (double3x4 lhs, double3x4 rhs) { return new bool3x4 (lhs.c0 > rhs.c0, lhs.c1 > rhs.c1, lhs.c2 > rhs.c2, lhs.c3 > rhs.c3); }
 
         /// <summary>Returns the result of a componentwise greater than operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise greater than.</param>
         /// <returns>bool3x4 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator > (double3x4 lhs, double rhs) { return new bool3x4 (lhs.c0 > rhs, lhs.c1 > rhs, lhs.c2 > rhs, lhs.c3 > rhs); }
 
         /// <summary>Returns the result of a componentwise greater than operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise greater than.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise greater than.</param>
         /// <returns>bool3x4 result of the componentwise greater than.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator > (double lhs, double3x4 rhs) { return new bool3x4 (lhs > rhs.c0, lhs > rhs.c1, lhs > rhs.c2, lhs > rhs.c3); }
 
 
@@ -418,35 +372,30 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise greater or equal.</param>
         /// <returns>bool3x4 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator >= (double3x4 lhs, double3x4 rhs) { return new bool3x4 (lhs.c0 >= rhs.c0, lhs.c1 >= rhs.c1, lhs.c2 >= rhs.c2, lhs.c3 >= rhs.c3); }
 
         /// <summary>Returns the result of a componentwise greater or equal operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise greater or equal.</param>
         /// <returns>bool3x4 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator >= (double3x4 lhs, double rhs) { return new bool3x4 (lhs.c0 >= rhs, lhs.c1 >= rhs, lhs.c2 >= rhs, lhs.c3 >= rhs); }
 
         /// <summary>Returns the result of a componentwise greater or equal operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise greater or equal.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise greater or equal.</param>
         /// <returns>bool3x4 result of the componentwise greater or equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator >= (double lhs, double3x4 rhs) { return new bool3x4 (lhs >= rhs.c0, lhs >= rhs.c1, lhs >= rhs.c2, lhs >= rhs.c3); }
 
 
         /// <summary>Returns the result of a componentwise unary minus operation on a double3x4 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise unary minus.</param>
         /// <returns>double3x4 result of the componentwise unary minus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator - (double3x4 val) { return new double3x4 (-val.c0, -val.c1, -val.c2, -val.c3); }
 
 
         /// <summary>Returns the result of a componentwise unary plus operation on a double3x4 matrix.</summary>
         /// <param name="val">Value to use when computing the componentwise unary plus.</param>
         /// <returns>double3x4 result of the componentwise unary plus.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 operator + (double3x4 val) { return new double3x4 (+val.c0, +val.c1, +val.c2, +val.c3); }
 
 
@@ -454,21 +403,18 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise equality.</param>
         /// <returns>bool3x4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator == (double3x4 lhs, double3x4 rhs) { return new bool3x4 (lhs.c0 == rhs.c0, lhs.c1 == rhs.c1, lhs.c2 == rhs.c2, lhs.c3 == rhs.c3); }
 
         /// <summary>Returns the result of a componentwise equality operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise equality.</param>
         /// <returns>bool3x4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator == (double3x4 lhs, double rhs) { return new bool3x4 (lhs.c0 == rhs, lhs.c1 == rhs, lhs.c2 == rhs, lhs.c3 == rhs); }
 
         /// <summary>Returns the result of a componentwise equality operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise equality.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise equality.</param>
         /// <returns>bool3x4 result of the componentwise equality.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator == (double lhs, double3x4 rhs) { return new bool3x4 (lhs == rhs.c0, lhs == rhs.c1, lhs == rhs.c2, lhs == rhs.c3); }
 
 
@@ -476,59 +422,41 @@ namespace Unity.Mathematics
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise not equal.</param>
         /// <returns>bool3x4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator != (double3x4 lhs, double3x4 rhs) { return new bool3x4 (lhs.c0 != rhs.c0, lhs.c1 != rhs.c1, lhs.c2 != rhs.c2, lhs.c3 != rhs.c3); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a double3x4 matrix and a double value.</summary>
         /// <param name="lhs">Left hand side double3x4 to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side double to use to compute componentwise not equal.</param>
         /// <returns>bool3x4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator != (double3x4 lhs, double rhs) { return new bool3x4 (lhs.c0 != rhs, lhs.c1 != rhs, lhs.c2 != rhs, lhs.c3 != rhs); }
 
         /// <summary>Returns the result of a componentwise not equal operation on a double value and a double3x4 matrix.</summary>
         /// <param name="lhs">Left hand side double to use to compute componentwise not equal.</param>
         /// <param name="rhs">Right hand side double3x4 to use to compute componentwise not equal.</param>
         /// <returns>bool3x4 result of the componentwise not equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3x4 operator != (double lhs, double3x4 rhs) { return new bool3x4 (lhs != rhs.c0, lhs != rhs.c1, lhs != rhs.c2, lhs != rhs.c3); }
 
 
 
-        /// <summary>Returns the double3 element at a specified index.</summary>
-        unsafe public ref double3 this[int index]
-        {
-            get
-            {
-#if ENABLE_UNITY_COLLECTIONS_CHECKS
-                if ((uint)index >= 4)
-                    throw new System.ArgumentException("index must be between[0...3]");
-#endif
-                fixed (double3x4* array = &this) { return ref ((double3*)array)[index]; }
-            }
-        }
 
         /// <summary>Returns true if the double3x4 is equal to a given double3x4, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(double3x4 rhs) { return c0.Equals(rhs.c0) && c1.Equals(rhs.c1) && c2.Equals(rhs.c2) && c3.Equals(rhs.c3); }
 
         /// <summary>Returns true if the double3x4 is equal to a given double3x4, false otherwise.</summary>
         /// <param name="o">Right hand side argument to compare equality with.</param>
         /// <returns>The result of the equality comparison.</returns>
-        public override bool Equals(object o) { return o is double3x4 converted && Equals(converted); }
+        public override bool Equals(object o) { return o is double3x4 && Equals((double3x4)o); }
 
 
         /// <summary>Returns a hash code for the double3x4.</summary>
         /// <returns>The computed hash code.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode() { return (int)math.hash(this); }
 
 
         /// <summary>Returns a string representation of the double3x4.</summary>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override string ToString()
         {
             return string.Format("double3x4({0}, {1}, {2}, {3},  {4}, {5}, {6}, {7},  {8}, {9}, {10}, {11})", c0.x, c1.x, c2.x, c3.x, c0.y, c1.y, c2.y, c3.y, c0.z, c1.z, c2.z, c3.z);
@@ -538,7 +466,6 @@ namespace Unity.Mathematics
         /// <param name="format">Format string to use during string formatting.</param>
         /// <param name="formatProvider">Format provider to use during string formatting.</param>
         /// <returns>String representation of the value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return string.Format("double3x4({0}, {1}, {2}, {3},  {4}, {5}, {6}, {7},  {8}, {9}, {10}, {11})", c0.x.ToString(format, formatProvider), c1.x.ToString(format, formatProvider), c2.x.ToString(format, formatProvider), c3.x.ToString(format, formatProvider), c0.y.ToString(format, formatProvider), c1.y.ToString(format, formatProvider), c2.y.ToString(format, formatProvider), c3.y.ToString(format, formatProvider), c0.z.ToString(format, formatProvider), c1.z.ToString(format, formatProvider), c2.z.ToString(format, formatProvider), c3.z.ToString(format, formatProvider));
@@ -554,7 +481,6 @@ namespace Unity.Mathematics
         /// <param name="c2">The matrix column c2 will be set to this value.</param>
         /// <param name="c3">The matrix column c3 will be set to this value.</param>
         /// <returns>double3x4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(double3 c0, double3 c1, double3 c2, double3 c3) { return new double3x4(c0, c1, c2, c3); }
 
         /// <summary>Returns a double3x4 matrix constructed from from 12 double values given in row-major order.</summary>
@@ -571,7 +497,6 @@ namespace Unity.Mathematics
         /// <param name="m22">The matrix at row 2, column 2 will be set to this value.</param>
         /// <param name="m23">The matrix at row 2, column 3 will be set to this value.</param>
         /// <returns>double3x4 constructed from arguments.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(double m00, double m01, double m02, double m03,
                                           double m10, double m11, double m12, double m13,
                                           double m20, double m21, double m22, double m23)
@@ -584,61 +509,51 @@ namespace Unity.Mathematics
         /// <summary>Returns a double3x4 matrix constructed from a single double value by assigning it to every component.</summary>
         /// <param name="v">double to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(double v) { return new double3x4(v); }
 
         /// <summary>Returns a double3x4 matrix constructed from a single bool value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">bool to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(bool v) { return new double3x4(v); }
 
         /// <summary>Return a double3x4 matrix constructed from a bool3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">bool3x4 to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(bool3x4 v) { return new double3x4(v); }
 
         /// <summary>Returns a double3x4 matrix constructed from a single int value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">int to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(int v) { return new double3x4(v); }
 
         /// <summary>Return a double3x4 matrix constructed from a int3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">int3x4 to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(int3x4 v) { return new double3x4(v); }
 
         /// <summary>Returns a double3x4 matrix constructed from a single uint value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">uint to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(uint v) { return new double3x4(v); }
 
         /// <summary>Return a double3x4 matrix constructed from a uint3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">uint3x4 to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(uint3x4 v) { return new double3x4(v); }
 
         /// <summary>Returns a double3x4 matrix constructed from a single float value by converting it to double and assigning it to every component.</summary>
         /// <param name="v">float to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(float v) { return new double3x4(v); }
 
         /// <summary>Return a double3x4 matrix constructed from a float3x4 matrix by componentwise conversion.</summary>
         /// <param name="v">float3x4 to convert to double3x4</param>
         /// <returns>Converted value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3x4 double3x4(float3x4 v) { return new double3x4(v); }
 
         /// <summary>Return the double4x3 transpose of a double3x4 matrix.</summary>
         /// <param name="v">Value to transpose.</param>
         /// <returns>Transposed value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4x3 transpose(double3x4 v)
         {
             return double4x3(
@@ -670,7 +585,6 @@ namespace Unity.Mathematics
         /// <summary>Returns a uint hash code of a double3x4 matrix.</summary>
         /// <param name="v">Matrix value to hash.</param>
         /// <returns>uint hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint hash(double3x4 v)
         {
             return csum(fold_to_uint(v.c0) * uint3(0xEE390C97u, 0x9C8A2F05u, 0x4DDC6509u) +
@@ -686,7 +600,6 @@ namespace Unity.Mathematics
         /// </summary>
         /// <param name="v">Matrix value to hash.</param>
         /// <returns>uint3 hash of the argument.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint3 hashwide(double3x4 v)
         {
             return (fold_to_uint(v.c0) * uint3(0xB139D651u, 0xE7579997u, 0xEF7D56C7u) +
