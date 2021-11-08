@@ -67,7 +67,7 @@
 // (If you run into problems with this, please let me know.)
 //
 
-using static Unity.Mathematics.math;
+using Unity.Mathematics;
 
 namespace Unity.Mathematics
 {
@@ -85,17 +85,17 @@ namespace Unity.Mathematics
             // Hack: offset y slightly to hide some rare artifacts
             pos.y += 0.01f;
             // Skew to hexagonal grid
-            float2 uv = float2(pos.x + pos.y * 0.5f, pos.y);
+            float2 uv = math.float2(pos.x + pos.y * 0.5f, pos.y);
 
-            float2 i0 = floor(uv);
-            float2 f0 = frac(uv);
+            float2 i0 = math.floor(uv);
+            float2 f0 = math.frac(uv);
             // Traversal order
-            float2 i1 = (f0.x > f0.y) ? float2(1.0f, 0.0f) : float2(0.0f, 1.0f);
+            float2 i1 = (f0.x > f0.y) ? math.float2(1.0f, 0.0f) : math.float2(0.0f, 1.0f);
 
             // Unskewed grid points in (x,y) space
-            float2 p0 = float2(i0.x - i0.y * 0.5f, i0.y);
-            float2 p1 = float2(p0.x + i1.x - i1.y * 0.5f, p0.y + i1.y);
-            float2 p2 = float2(p0.x + 0.5f, p0.y + 1.0f);
+            float2 p0 = math.float2(i0.x - i0.y * 0.5f, i0.y);
+            float2 p1 = math.float2(p0.x + i1.x - i1.y * 0.5f, p0.y + i1.y);
+            float2 p2 = math.float2(p0.x + 0.5f, p0.y + 1.0f);
 
             // Vectors in unskewed (x,y) coordinates from
             // each of the simplex corners to the evaluation point
@@ -105,30 +105,30 @@ namespace Unity.Mathematics
 
             // Wrap p0, p1 and p2 to the desired period before gradient hashing:
             // wrap points in (x,y), map to (u,v)
-            float3 xw = fmod(float3(p0.x, p1.x, p2.x), per.x);
-            float3 yw = fmod(float3(p0.y, p1.y, p2.y), per.y);
+            float3 xw = math.fmod(math.float3(p0.x, p1.x, p2.x), per.x);
+            float3 yw = math.fmod(math.float3(p0.y, p1.y, p2.y), per.y);
             float3 iuw = xw + 0.5f * yw;
             float3 ivw = yw;
 
             // Create gradients from indices
-            float2 g0 = rgrad2(float2(iuw.x, ivw.x), rot);
-            float2 g1 = rgrad2(float2(iuw.y, ivw.y), rot);
-            float2 g2 = rgrad2(float2(iuw.z, ivw.z), rot);
+            float2 g0 = rgrad2(math.float2(iuw.x, ivw.x), rot);
+            float2 g1 = rgrad2(math.float2(iuw.y, ivw.y), rot);
+            float2 g2 = rgrad2(math.float2(iuw.z, ivw.z), rot);
 
             // Gradients math.dot vectors to corresponding corners
             // (The derivatives of this are simply the gradients)
-            float3 w = float3(dot(g0, d0), dot(g1, d1), dot(g2, d2));
+            float3 w = math.float3(math.dot(g0, d0), math.dot(g1, d1), math.dot(g2, d2));
 
             // Radial weights from corners
-            // 0.8 is the square of 2/math.sqrt(5), the distance from
+            // 0.8 is the square of 2/math.math.sqrt(5), the distance from
             // a grid point to the nearest simplex boundary
-            float3 t = 0.8f - float3(dot(d0, d0), dot(d1, d1), dot(d2, d2));
+            float3 t = 0.8f - math.float3(math.dot(d0, d0), math.dot(d1, d1), math.dot(d2, d2));
 
             // Partial derivatives for analytical gradient computation
-            float3 dtdx = -2.0f * float3(d0.x, d1.x, d2.x);
-            float3 dtdy = -2.0f * float3(d0.y, d1.y, d2.y);
+            float3 dtdx = -2.0f * math.float3(d0.x, d1.x, d2.x);
+            float3 dtdy = -2.0f * math.float3(d0.y, d1.y, d2.y);
 
-            // Set influence of each surflet to zero outside radius math.sqrt(0.8)
+            // Set influence of each surflet to zero outside radius math.math.sqrt(0.8)
             if (t.x < 0.0f)
             {
                 dtdx.x = 0.0f;
@@ -155,17 +155,17 @@ namespace Unity.Mathematics
 
             // Final noise value is:
             // sum of ((radial weights) times (gradient math.dot vector from corner))
-            float n = dot(t4, w);
+            float n = math.dot(t4, w);
 
             // Final analytical derivative (gradient of a sum of scalar products)
-            float2 dt0 = float2(dtdx.x, dtdy.x) * 4.0f * t3.x;
+            float2 dt0 = math.float2(dtdx.x, dtdy.x) * 4.0f * t3.x;
             float2 dn0 = t4.x * g0 + dt0 * w.x;
-            float2 dt1 = float2(dtdx.y, dtdy.y) * 4.0f * t3.y;
+            float2 dt1 = math.float2(dtdx.y, dtdy.y) * 4.0f * t3.y;
             float2 dn1 = t4.y * g1 + dt1 * w.y;
-            float2 dt2 = float2(dtdx.z, dtdy.z) * 4.0f * t3.z;
+            float2 dt2 = math.float2(dtdx.z, dtdy.z) * 4.0f * t3.z;
             float2 dn2 = t4.z * g2 + dt2 * w.z;
 
-            return 11.0f * float3(n, dn0 + dn1 + dn2);
+            return 11.0f * math.float3(n, dn0 + dn1 + dn2);
         }
 
         /// <summary>
@@ -191,17 +191,17 @@ namespace Unity.Mathematics
             // Offset y slightly to hide some rare artifacts
             pos.y += 0.001f;
             // Skew to hexagonal grid
-            float2 uv = float2(pos.x + pos.y * 0.5f, pos.y);
+            float2 uv = math.float2(pos.x + pos.y * 0.5f, pos.y);
 
-            float2 i0 = floor(uv);
-            float2 f0 = frac(uv);
+            float2 i0 = math.floor(uv);
+            float2 f0 = math.frac(uv);
             // Traversal order
-            float2 i1 = (f0.x > f0.y) ? float2(1.0f, 0.0f) : float2(0.0f, 1.0f);
+            float2 i1 = (f0.x > f0.y) ? math.float2(1.0f, 0.0f) : math.float2(0.0f, 1.0f);
 
             // Unskewed grid points in (x,y) space
-            float2 p0 = float2(i0.x - i0.y * 0.5f, i0.y);
-            float2 p1 = float2(p0.x + i1.x - i1.y * 0.5f, p0.y + i1.y);
-            float2 p2 = float2(p0.x + 0.5f, p0.y + 1.0f);
+            float2 p0 = math.float2(i0.x - i0.y * 0.5f, i0.y);
+            float2 p1 = math.float2(p0.x + i1.x - i1.y * 0.5f, p0.y + i1.y);
+            float2 p2 = math.float2(p0.x + 0.5f, p0.y + 1.0f);
 
             // Vectors in unskewed (x,y) coordinates from
             // each of the simplex corners to the evaluation point
@@ -211,27 +211,27 @@ namespace Unity.Mathematics
 
             // Wrap p0, p1 and p2 to the desired period before gradient hashing:
             // wrap points in (x,y), map to (u,v)
-            float3 xw = fmod(float3(p0.x, p1.x, p2.x), per.x);
-            float3 yw = fmod(float3(p0.y, p1.y, p2.y), per.y);
+            float3 xw = math.fmod(math.float3(p0.x, p1.x, p2.x), per.x);
+            float3 yw = math.fmod(math.float3(p0.y, p1.y, p2.y), per.y);
             float3 iuw = xw + 0.5f * yw;
             float3 ivw = yw;
 
             // Create gradients from indices
-            float2 g0 = rgrad2(float2(iuw.x, ivw.x), rot);
-            float2 g1 = rgrad2(float2(iuw.y, ivw.y), rot);
-            float2 g2 = rgrad2(float2(iuw.z, ivw.z), rot);
+            float2 g0 = rgrad2(math.float2(iuw.x, ivw.x), rot);
+            float2 g1 = rgrad2(math.float2(iuw.y, ivw.y), rot);
+            float2 g2 = rgrad2(math.float2(iuw.z, ivw.z), rot);
 
             // Gradients math.dot vectors to corresponding corners
             // (The derivatives of this are simply the gradients)
-            float3 w = float3(dot(g0, d0), dot(g1, d1), dot(g2, d2));
+            float3 w = math.float3(math.dot(g0, d0), math.dot(g1, d1), math.dot(g2, d2));
 
             // Radial weights from corners
-            // 0.8 is the square of 2/math.sqrt(5), the distance from
+            // 0.8 is the square of 2/math.math.sqrt(5), the distance from
             // a grid point to the nearest simplex boundary
-            float3 t = 0.8f - float3(dot(d0, d0), dot(d1, d1), dot(d2, d2));
+            float3 t = 0.8f - math.float3(math.dot(d0, d0), math.dot(d1, d1), math.dot(d2, d2));
 
-            // Set influence of each surflet to zero outside radius math.sqrt(0.8)
-            t = max(t, 0.0f);
+            // Set influence of each surflet to zero outside radius math.math.sqrt(0.8)
+            t = math.max(t, 0.0f);
 
             // Fourth power of t
             float3 t2 = t * t;
@@ -239,7 +239,7 @@ namespace Unity.Mathematics
 
             // Final noise value is:
             // sum of ((radial weights) times (gradient math.dot vector from corner))
-            float n = dot(t4, w);
+            float n = math.dot(t4, w);
 
             // Rescale to cover the range [-1,1] reasonably well
             return 11.0f * n;
@@ -267,17 +267,17 @@ namespace Unity.Mathematics
             // Offset y slightly to hide some rare artifacts
             pos.y += 0.001f;
             // Skew to hexagonal grid
-            float2 uv = float2(pos.x + pos.y * 0.5f, pos.y);
+            float2 uv = math.float2(pos.x + pos.y * 0.5f, pos.y);
 
-            float2 i0 = floor(uv);
-            float2 f0 = frac(uv);
+            float2 i0 = math.floor(uv);
+            float2 f0 = math.frac(uv);
             // Traversal order
-            float2 i1 = (f0.x > f0.y) ? float2(1.0f, 0.0f) : float2(0.0f, 1.0f);
+            float2 i1 = (f0.x > f0.y) ? math.float2(1.0f, 0.0f) : math.float2(0.0f, 1.0f);
 
             // Unskewed grid points in (x,y) space
-            float2 p0 = float2(i0.x - i0.y * 0.5f, i0.y);
-            float2 p1 = float2(p0.x + i1.x - i1.y * 0.5f, p0.y + i1.y);
-            float2 p2 = float2(p0.x + 0.5f, p0.y + 1.0f);
+            float2 p0 = math.float2(i0.x - i0.y * 0.5f, i0.y);
+            float2 p1 = math.float2(p0.x + i1.x - i1.y * 0.5f, p0.y + i1.y);
+            float2 p2 = math.float2(p0.x + 0.5f, p0.y + 1.0f);
 
             // Vectors in unskewed (x,y) coordinates from
             // each of the simplex corners to the evaluation point
@@ -285,8 +285,8 @@ namespace Unity.Mathematics
             float2 d1 = pos - p1;
             float2 d2 = pos - p2;
 
-            float3 x = float3(p0.x, p1.x, p2.x);
-            float3 y = float3(p0.y, p1.y, p2.y);
+            float3 x = math.float3(p0.x, p1.x, p2.x);
+            float3 y = math.float3(p0.y, p1.y, p2.y);
             float3 iuw = x + 0.5f * y;
             float3 ivw = y;
 
@@ -295,24 +295,24 @@ namespace Unity.Mathematics
             ivw = mod289(ivw);
 
             // Create gradients from indices
-            float2 g0 = rgrad2(float2(iuw.x, ivw.x), rot);
-            float2 g1 = rgrad2(float2(iuw.y, ivw.y), rot);
-            float2 g2 = rgrad2(float2(iuw.z, ivw.z), rot);
+            float2 g0 = rgrad2(math.float2(iuw.x, ivw.x), rot);
+            float2 g1 = rgrad2(math.float2(iuw.y, ivw.y), rot);
+            float2 g2 = rgrad2(math.float2(iuw.z, ivw.z), rot);
 
             // Gradients math.dot vectors to corresponding corners
             // (The derivatives of this are simply the gradients)
-            float3 w = float3(dot(g0, d0), dot(g1, d1), dot(g2, d2));
+            float3 w = math.float3(math.dot(g0, d0), math.dot(g1, d1), math.dot(g2, d2));
 
             // Radial weights from corners
-            // 0.8 is the square of 2/math.sqrt(5), the distance from
+            // 0.8 is the square of 2/math.math.sqrt(5), the distance from
             // a grid point to the nearest simplex boundary
-            float3 t = 0.8f - float3(dot(d0, d0), dot(d1, d1), dot(d2, d2));
+            float3 t = 0.8f - math.float3(math.dot(d0, d0), math.dot(d1, d1), math.dot(d2, d2));
 
             // Partial derivatives for analytical gradient computation
-            float3 dtdx = -2.0f * float3(d0.x, d1.x, d2.x);
-            float3 dtdy = -2.0f * float3(d0.y, d1.y, d2.y);
+            float3 dtdx = -2.0f * math.float3(d0.x, d1.x, d2.x);
+            float3 dtdy = -2.0f * math.float3(d0.y, d1.y, d2.y);
 
-            // Set influence of each surflet to zero outside radius math.sqrt(0.8)
+            // Set influence of each surflet to zero outside radius math.math.sqrt(0.8)
             if (t.x < 0.0f)
             {
                 dtdx.x = 0.0f;
@@ -339,17 +339,17 @@ namespace Unity.Mathematics
 
             // Final noise value is:
             // sum of ((radial weights) times (gradient math.dot vector from corner))
-            float n = dot(t4, w);
+            float n = math.dot(t4, w);
 
             // Final analytical derivative (gradient of a sum of scalar products)
-            float2 dt0 = float2(dtdx.x, dtdy.x) * 4.0f * t3.x;
+            float2 dt0 = math.float2(dtdx.x, dtdy.x) * 4.0f * t3.x;
             float2 dn0 = t4.x * g0 + dt0 * w.x;
-            float2 dt1 = float2(dtdx.y, dtdy.y) * 4.0f * t3.y;
+            float2 dt1 = math.float2(dtdx.y, dtdy.y) * 4.0f * t3.y;
             float2 dn1 = t4.y * g1 + dt1 * w.y;
-            float2 dt2 = float2(dtdx.z, dtdy.z) * 4.0f * t3.z;
+            float2 dt2 = math.float2(dtdx.z, dtdy.z) * 4.0f * t3.z;
             float2 dn2 = t4.z * g2 + dt2 * w.z;
 
-            return 11.0f * float3(n, dn0 + dn1 + dn2);
+            return 11.0f * math.float3(n, dn0 + dn1 + dn2);
         }
 
         /// <summary>
@@ -373,17 +373,17 @@ namespace Unity.Mathematics
             // Offset y slightly to hide some rare artifacts
             pos.y += 0.001f;
             // Skew to hexagonal grid
-            float2 uv = float2(pos.x + pos.y * 0.5f, pos.y);
+            float2 uv = math.float2(pos.x + pos.y * 0.5f, pos.y);
 
-            float2 i0 = floor(uv);
-            float2 f0 = frac(uv);
+            float2 i0 = math.floor(uv);
+            float2 f0 = math.frac(uv);
             // Traversal order
-            float2 i1 = (f0.x > f0.y) ? float2(1.0f, 0.0f) : float2(0.0f, 1.0f);
+            float2 i1 = (f0.x > f0.y) ? math.float2(1.0f, 0.0f) : math.float2(0.0f, 1.0f);
 
             // Unskewed grid points in (x,y) space
-            float2 p0 = float2(i0.x - i0.y * 0.5f, i0.y);
-            float2 p1 = float2(p0.x + i1.x - i1.y * 0.5f, p0.y + i1.y);
-            float2 p2 = float2(p0.x + 0.5f, p0.y + 1.0f);
+            float2 p0 = math.float2(i0.x - i0.y * 0.5f, i0.y);
+            float2 p1 = math.float2(p0.x + i1.x - i1.y * 0.5f, p0.y + i1.y);
+            float2 p2 = math.float2(p0.x + 0.5f, p0.y + 1.0f);
 
             // Vectors in unskewed (x,y) coordinates from
             // each of the simplex corners to the evaluation point
@@ -391,8 +391,8 @@ namespace Unity.Mathematics
             float2 d1 = pos - p1;
             float2 d2 = pos - p2;
 
-            float3 x = float3(p0.x, p1.x, p2.x);
-            float3 y = float3(p0.y, p1.y, p2.y);
+            float3 x = math.float3(p0.x, p1.x, p2.x);
+            float3 y = math.float3(p0.y, p1.y, p2.y);
             float3 iuw = x + 0.5f * y;
             float3 ivw = y;
 
@@ -401,21 +401,21 @@ namespace Unity.Mathematics
             ivw = mod289(ivw);
 
             // Create gradients from indices
-            float2 g0 = rgrad2(float2(iuw.x, ivw.x), rot);
-            float2 g1 = rgrad2(float2(iuw.y, ivw.y), rot);
-            float2 g2 = rgrad2(float2(iuw.z, ivw.z), rot);
+            float2 g0 = rgrad2(math.float2(iuw.x, ivw.x), rot);
+            float2 g1 = rgrad2(math.float2(iuw.y, ivw.y), rot);
+            float2 g2 = rgrad2(math.float2(iuw.z, ivw.z), rot);
 
             // Gradients math.dot vectors to corresponding corners
             // (The derivatives of this are simply the gradients)
-            float3 w = float3(dot(g0, d0), dot(g1, d1), dot(g2, d2));
+            float3 w = math.float3(math.dot(g0, d0), math.dot(g1, d1), math.dot(g2, d2));
 
             // Radial weights from corners
-            // 0.8 is the square of 2/math.sqrt(5), the distance from
+            // 0.8 is the square of 2/math.math.sqrt(5), the distance from
             // a grid point to the nearest simplex boundary
-            float3 t = 0.8f - float3(dot(d0, d0), dot(d1, d1), dot(d2, d2));
+            float3 t = 0.8f - math.float3(math.dot(d0, d0), math.dot(d1, d1), math.dot(d2, d2));
 
-            // Set influence of each surflet to zero outside radius math.sqrt(0.8)
-            t = max(t, 0.0f);
+            // Set influence of each surflet to zero outside radius math.math.sqrt(0.8)
+            t = math.max(t, 0.0f);
 
             // Fourth power of t
             float3 t2 = t * t;
@@ -423,7 +423,7 @@ namespace Unity.Mathematics
 
             // Final noise value is:
             // sum of ((radial weights) times (gradient math.dot vector from corner))
-            float n = dot(t4, w);
+            float n = math.dot(t4, w);
 
             // Rescale to cover the range [-1,1] reasonably well
             return 11.0f * n;

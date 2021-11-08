@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using Unity.IL2CPP.CompilerServices;
-using static Unity.Mathematics.math;
+using Unity.Mathematics;
 
 namespace Unity.Mathematics
 {
@@ -27,8 +27,7 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a RigidTransform from a rotation represented by a unit quaternion and a translation represented by a float3 vector.</summary>
         /// <param name="rotation">The quaternion rotation.</param>
-        /// <param name="translation">The translation vector.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="translation">The translation vector.</param>  
         public RigidTransform(quaternion rotation, float3 translation)
         {
             this.rot = rotation;
@@ -37,8 +36,7 @@ namespace Unity.Mathematics
 
         /// <summary>Constructs a RigidTransform from a rotation represented by a float3x3 matrix and a translation represented by a float3 vector.</summary>
         /// <param name="rotation">The float3x3 rotation matrix.</param>
-        /// <param name="translation">The translation vector.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="translation">The translation vector.</param>  
         public RigidTransform(float3x3 rotation, float3 translation)
         {
             this.rot = new quaternion(rotation);
@@ -46,8 +44,7 @@ namespace Unity.Mathematics
         }
 
         /// <summary>Constructs a RigidTransform from a float4x4. Assumes the matrix is orthonormal.</summary>
-        /// <param name="transform">The float4x4 transformation matrix, must be orthonormal.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="transform">The float4x4 transformation matrix, must be orthonormal.</param>  
         public RigidTransform(float4x4 transform)
         {
             this.rot = new quaternion(transform);
@@ -61,8 +58,7 @@ namespace Unity.Mathematics
         /// </summary>
         /// <param name="axis">The axis of rotation.</param>
         /// <param name="angle">The rotation angle in radians.</param>
-        /// <returns>The RigidTransform from a rotation axis and angle of rotation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform from a rotation axis and angle of rotation.</returns>  
         public static RigidTransform AxisAngle(float3 axis, float angle) { return new RigidTransform(quaternion.AxisAngle(axis, angle), float3.zero); }
 
         /// <summary>
@@ -70,8 +66,7 @@ namespace Unity.Mathematics
         /// All rotation angles are in radians and clockwise when looking along the rotation axis towards the origin.
         /// </summary>
         /// <param name="xyz">A float3 vector containing the rotation angles around the x-, y- and z-axis measures in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in x-y-z order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the Euler angle transformation in x-y-z order.</returns>  
         public static RigidTransform EulerXYZ(float3 xyz) { return new RigidTransform(quaternion.EulerXYZ(xyz), float3.zero); }
 
         /// <summary>
@@ -79,8 +74,7 @@ namespace Unity.Mathematics
         /// All rotation angles are in radians and clockwise when looking along the rotation axis towards the origin.
         /// </summary>
         /// <param name="xyz">A float3 vector containing the rotation angles around the x-, y- and z-axis measures in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in x-z-y order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the Euler angle transformation in x-z-y order.</returns>  
         public static RigidTransform EulerXZY(float3 xyz) { return new RigidTransform(quaternion.EulerXZY(xyz), float3.zero); }
 
         /// <summary>
@@ -88,8 +82,7 @@ namespace Unity.Mathematics
         /// All rotation angles are in radians and clockwise when looking along the rotation axis towards the origin.
         /// </summary>
         /// <param name="xyz">A float3 vector containing the rotation angles around the x-, y- and z-axis measures in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in y-x-z order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the Euler angle transformation in y-x-z order.</returns>  
         public static RigidTransform EulerYXZ(float3 xyz) { return new RigidTransform(quaternion.EulerYXZ(xyz), float3.zero); }
 
         /// <summary>
@@ -97,8 +90,7 @@ namespace Unity.Mathematics
         /// All rotation angles are in radians and clockwise when looking along the rotation axis towards the origin.
         /// </summary>
         /// <param name="xyz">A float3 vector containing the rotation angles around the x-, y- and z-axis measures in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in y-z-x order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the Euler angle transformation in y-z-x order.</returns>  
         public static RigidTransform EulerYZX(float3 xyz) { return new RigidTransform(quaternion.EulerYZX(xyz), float3.zero); }
 
 
@@ -108,8 +100,7 @@ namespace Unity.Mathematics
         /// This is the default order rotation order in Unity.
         /// </summary>
         /// <param name="xyz">A float3 vector containing the rotation angles around the x-, y- and z-axis measures in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in z-x-y order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the Euler angle transformation in z-x-y order.</returns>  
         public static RigidTransform EulerZXY(float3 xyz) { return new RigidTransform(quaternion.EulerZXY(xyz), float3.zero); }
 
         /// <summary>
@@ -117,8 +108,7 @@ namespace Unity.Mathematics
         /// All rotation angles are in radians and clockwise when looking along the rotation axis towards the origin.
         /// </summary>
         /// <param name="xyz">A float3 vector containing the rotation angles around the x-, y- and z-axis measures in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in z-y-x order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the Euler angle transformation in z-y-x order.</returns>  
         public static RigidTransform EulerZYX(float3 xyz) { return new RigidTransform(quaternion.EulerZYX(xyz), float3.zero); }
 
         /// <summary>
@@ -128,9 +118,8 @@ namespace Unity.Mathematics
         /// <param name="x">The rotation angle around the x-axis in radians.</param>
         /// <param name="y">The rotation angle around the y-axis in radians.</param>
         /// <param name="z">The rotation angle around the z-axis in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in x-y-z order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static RigidTransform EulerXYZ(float x, float y, float z) { return EulerXYZ(float3(x, y, z)); }
+        /// <returns>The RigidTransform of the Euler angle transformation in x-y-z order.</returns>  
+        public static RigidTransform EulerXYZ(float x, float y, float z) { return EulerXYZ(math.float3(x, y, z)); }
 
         /// <summary>
         /// Returns a RigidTransform constructed by first performing a rotation around the x-axis, then the z-axis and finally the y-axis.
@@ -139,9 +128,8 @@ namespace Unity.Mathematics
         /// <param name="x">The rotation angle around the x-axis in radians.</param>
         /// <param name="y">The rotation angle around the y-axis in radians.</param>
         /// <param name="z">The rotation angle around the z-axis in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in x-z-y order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static RigidTransform EulerXZY(float x, float y, float z) { return EulerXZY(float3(x, y, z)); }
+        /// <returns>The RigidTransform of the Euler angle transformation in x-z-y order.</returns>  
+        public static RigidTransform EulerXZY(float x, float y, float z) { return EulerXZY(math.float3(x, y, z)); }
 
         /// <summary>
         /// Returns a RigidTransform constructed by first performing a rotation around the y-axis, then the x-axis and finally the z-axis.
@@ -150,9 +138,8 @@ namespace Unity.Mathematics
         /// <param name="x">The rotation angle around the x-axis in radians.</param>
         /// <param name="y">The rotation angle around the y-axis in radians.</param>
         /// <param name="z">The rotation angle around the z-axis in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in y-x-z order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static RigidTransform EulerYXZ(float x, float y, float z) { return EulerYXZ(float3(x, y, z)); }
+        /// <returns>The RigidTransform of the Euler angle transformation in y-x-z order.</returns>  
+        public static RigidTransform EulerYXZ(float x, float y, float z) { return EulerYXZ(math.float3(x, y, z)); }
 
         /// <summary>
         /// Returns a RigidTransform constructed by first performing a rotation around the y-axis, then the z-axis and finally the x-axis.
@@ -161,9 +148,8 @@ namespace Unity.Mathematics
         /// <param name="x">The rotation angle around the x-axis in radians.</param>
         /// <param name="y">The rotation angle around the y-axis in radians.</param>
         /// <param name="z">The rotation angle around the z-axis in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in y-z-x order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static RigidTransform EulerYZX(float x, float y, float z) { return EulerYZX(float3(x, y, z)); }
+        /// <returns>The RigidTransform of the Euler angle transformation in y-z-x order.</returns>  
+        public static RigidTransform EulerYZX(float x, float y, float z) { return EulerYZX(math.float3(x, y, z)); }
 
         /// <summary>
         /// Returns a RigidTransform constructed by first performing a rotation around the z-axis, then the x-axis and finally the y-axis.
@@ -173,9 +159,8 @@ namespace Unity.Mathematics
         /// <param name="x">The rotation angle around the x-axis in radians.</param>
         /// <param name="y">The rotation angle around the y-axis in radians.</param>
         /// <param name="z">The rotation angle around the z-axis in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in z-x-y order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static RigidTransform EulerZXY(float x, float y, float z) { return EulerZXY(float3(x, y, z)); }
+        /// <returns>The RigidTransform of the Euler angle transformation in z-x-y order.</returns>  
+        public static RigidTransform EulerZXY(float x, float y, float z) { return EulerZXY(math.float3(x, y, z)); }
 
         /// <summary>
         /// Returns a RigidTransform constructed by first performing a rotation around the z-axis, then the y-axis and finally the x-axis.
@@ -184,9 +169,8 @@ namespace Unity.Mathematics
         /// <param name="x">The rotation angle around the x-axis in radians.</param>
         /// <param name="y">The rotation angle around the y-axis in radians.</param>
         /// <param name="z">The rotation angle around the z-axis in radians.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in z-y-x order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static RigidTransform EulerZYX(float x, float y, float z) { return EulerZYX(float3(x, y, z)); }
+        /// <returns>The RigidTransform of the Euler angle transformation in z-y-x order.</returns>  
+        public static RigidTransform EulerZYX(float x, float y, float z) { return EulerZYX(math.float3(x, y, z)); }
 
         /// <summary>
         /// Returns a RigidTransform constructed by first performing 3 rotations around the principal axes in a given order.
@@ -196,23 +180,22 @@ namespace Unity.Mathematics
         /// </summary>
         /// <param name="xyz">A float3 vector containing the rotation angles around the x-, y- and z-axis measures in radians.</param>
         /// <param name="order">The order in which the rotations are applied.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in the given rotation order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static RigidTransform Euler(float3 xyz, RotationOrder order = RotationOrder.ZXY)
+        /// <returns>The RigidTransform of the Euler angle transformation in the given rotation order.</returns>  
+        public static RigidTransform Euler(float3 xyz, math.RotationOrder order = math.RotationOrder.ZXY)
         {
             switch (order)
             {
-                case RotationOrder.XYZ:
+                case math.RotationOrder.XYZ:
                     return EulerXYZ(xyz);
-                case RotationOrder.XZY:
+                case math.RotationOrder.XZY:
                     return EulerXZY(xyz);
-                case RotationOrder.YXZ:
+                case math.RotationOrder.YXZ:
                     return EulerYXZ(xyz);
-                case RotationOrder.YZX:
+                case math.RotationOrder.YZX:
                     return EulerYZX(xyz);
-                case RotationOrder.ZXY:
+                case math.RotationOrder.ZXY:
                     return EulerZXY(xyz);
-                case RotationOrder.ZYX:
+                case math.RotationOrder.ZYX:
                     return EulerZYX(xyz);
                 default:
                     return RigidTransform.identity;
@@ -229,17 +212,15 @@ namespace Unity.Mathematics
         /// <param name="y">The rotation angle around the y-axis in radians.</param>
         /// <param name="z">The rotation angle around the z-axis in radians.</param>
         /// <param name="order">The order in which the rotations are applied.</param>
-        /// <returns>The RigidTransform of the Euler angle transformation in the given rotation order.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static RigidTransform Euler(float x, float y, float z, RotationOrder order = RotationOrder.Default)
+        /// <returns>The RigidTransform of the Euler angle transformation in the given rotation order.</returns>  
+        public static RigidTransform Euler(float x, float y, float z, math.RotationOrder order = math.RotationOrder.Default)
         {
-            return Euler(float3(x, y, z), order);
+            return Euler(math.float3(x, y, z), order);
         }
 
         /// <summary>Returns a RigidTransform that rotates around the x-axis by a given number of radians.</summary>
         /// <param name="angle">The clockwise rotation angle when looking along the x-axis towards the origin in radians.</param>
-        /// <returns>The RigidTransform of rotating around the x-axis by the given angle.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of rotating around the x-axis by the given angle.</returns>  
         public static RigidTransform RotateX(float angle)
         {
             return new RigidTransform(quaternion.RotateX(angle), float3.zero);
@@ -247,8 +228,7 @@ namespace Unity.Mathematics
 
         /// <summary>Returns a RigidTransform that rotates around the y-axis by a given number of radians.</summary>
         /// <param name="angle">The clockwise rotation angle when looking along the y-axis towards the origin in radians.</param>
-        /// <returns>The RigidTransform of rotating around the y-axis by the given angle.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of rotating around the y-axis by the given angle.</returns>  
         public static RigidTransform RotateY(float angle)
         {
             return new RigidTransform(quaternion.RotateY(angle), float3.zero);
@@ -256,8 +236,7 @@ namespace Unity.Mathematics
 
         /// <summary>Returns a RigidTransform that rotates around the z-axis by a given number of radians.</summary>
         /// <param name="angle">The clockwise rotation angle when looking along the z-axis towards the origin in radians.</param>
-        /// <returns>The RigidTransform of rotating around the z-axis by the given angle.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of rotating around the z-axis by the given angle.</returns>  
         public static RigidTransform RotateZ(float angle)
         {
             return new RigidTransform(quaternion.RotateZ(angle), float3.zero);
@@ -265,8 +244,7 @@ namespace Unity.Mathematics
 
         /// <summary>Returns a RigidTransform that translates by an amount specified by a float3 vector.</summary>
         /// <param name="vector">The translation vector.</param>
-        /// <returns>The RigidTransform that translates by the given translation vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform that translates by the given translation vector.</returns>  
         public static RigidTransform Translate(float3 vector)
         {
             return new RigidTransform(quaternion.identity, vector);
@@ -275,24 +253,20 @@ namespace Unity.Mathematics
 
         /// <summary>Returns true if the RigidTransform is equal to a given RigidTransform, false otherwise.</summary>
         /// <param name="x">The RigidTransform to compare with.</param>
-        /// <returns>True if the RigidTransform is equal to the input, false otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>True if the RigidTransform is equal to the input, false otherwise.</returns>  
         public bool Equals(RigidTransform x) { return rot.Equals(x.rot) && pos.Equals(x.pos); }
 
         /// <summary>Returns true if the RigidTransform is equal to a given RigidTransform, false otherwise.</summary>
         /// <param name="x">The object to compare with.</param>
-        /// <returns>True if the RigidTransform is equal to the input, false otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override bool Equals(object x) { return x is RigidTransform converted && Equals(converted); }
+        /// <returns>True if the RigidTransform is equal to the input, false otherwise.</returns>  
+        public override bool Equals(object x) { return x is RigidTransform && Equals((RigidTransform)x); }
 
         /// <summary>Returns a hash code for the RigidTransform.</summary>
-        /// <returns>The hash code of the RigidTransform.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The hash code of the RigidTransform.</returns>  
         public override int GetHashCode() { return (int)math.hash(this); }
 
         /// <summary>Returns a string representation of the RigidTransform.</summary>
-        /// <returns>The string representation of the RigidTransform.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The string representation of the RigidTransform.</returns>  
         public override string ToString()
         {
             return string.Format("RigidTransform(({0}f, {1}f, {2}f, {3}f),  ({4}f, {5}f, {6}f))",
@@ -302,8 +276,7 @@ namespace Unity.Mathematics
         /// <summary>Returns a string representation of the RigidTransform using a specified format and culture-specific format information.</summary>
         /// <param name="format">The format string.</param>
         /// <param name="formatProvider">The format provider to use during formatting.</param>
-        /// <returns>The formatted string representation of the RigidTransform.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The formatted string representation of the RigidTransform.</returns>  
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return string.Format("float4x4(({0}f, {1}f, {2}f, {3}f),  ({4}f, {5}f, {6}f))",
@@ -322,27 +295,23 @@ namespace Unity.Mathematics
         /// <summary>Returns a RigidTransform constructed from a rotation represented by a unit quaternion and a translation represented by a float3 vector.</summary>
         /// <param name="rot">The quaternion rotation.</param>
         /// <param name="pos">The translation vector.</param>
-        /// <returns>The RigidTransform of the given rotation quaternion and translation vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the given rotation quaternion and translation vector.</returns>  
         public static RigidTransform RigidTransform(quaternion rot, float3 pos) { return new RigidTransform(rot, pos); }
 
         /// <summary>Returns a RigidTransform constructed from a rotation represented by a float3x3 rotation matrix and a translation represented by a float3 vector.</summary>
         /// <param name="rotation">The float3x3 rotation matrix.</param>
         /// <param name="translation">The translation vector.</param>
-        /// <returns>The RigidTransform of the given rotation matrix and translation vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the given rotation matrix and translation vector.</returns>  
         public static RigidTransform RigidTransform(float3x3 rotation, float3 translation) { return new RigidTransform(rotation, translation); }
 
         /// <summary>Returns a RigidTransform constructed from a rotation represented by a float3x3 matrix and a translation represented by a float3 vector.</summary>
         /// <param name="transform">The float4x4 transformation matrix.</param>
-        /// <returns>The RigidTransform of the given float4x4 transformation matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of the given float4x4 transformation matrix.</returns>  
         public static RigidTransform RigidTransform(float4x4 transform) { return new RigidTransform(transform); }
 
         /// <summary>Returns the inverse of a RigidTransform.</summary>
         /// <param name="t">The RigidTransform to invert.</param>
-        /// <returns>The inverse RigidTransform.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The inverse RigidTransform.</returns>  
         public static RigidTransform inverse(RigidTransform t)
         {
             quaternion invRotation = inverse(t.rot);
@@ -353,8 +322,7 @@ namespace Unity.Mathematics
         /// <summary>Returns the result of transforming the RigidTransform b by the RigidTransform a.</summary>
         /// <param name="a">The RigidTransform on the left.</param>
         /// <param name="b">The RigidTransform on the right.</param>
-        /// <returns>The RigidTransform of a transforming b.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The RigidTransform of a transforming b.</returns>  
         public static RigidTransform mul(RigidTransform a, RigidTransform b)
         {
             return new RigidTransform(mul(a.rot, b.rot), mul(a.rot, b.pos) + a.pos);
@@ -363,8 +331,7 @@ namespace Unity.Mathematics
         /// <summary>Returns the result of transforming a float4 homogeneous coordinate by a RigidTransform.</summary>
         /// <param name="a">The RigidTransform.</param>
         /// <param name="pos">The position to be transformed.</param>
-        /// <returns>The transformed position.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The transformed position.</returns>  
         public static float4 mul(RigidTransform a, float4 pos)
         {
             return float4(mul(a.rot, pos.xyz) + a.pos * pos.w, pos.w);
@@ -373,8 +340,7 @@ namespace Unity.Mathematics
         /// <summary>Returns the result of rotating a float3 vector by a RigidTransform.</summary>
         /// <param name="a">The RigidTransform.</param>
         /// <param name="dir">The direction vector to rotate.</param>
-        /// <returns>The rotated direction vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The rotated direction vector.</returns>  
         public static float3 rotate(RigidTransform a, float3 dir)
         {
             return mul(a.rot, dir);
@@ -383,8 +349,7 @@ namespace Unity.Mathematics
         /// <summary>Returns the result of transforming a float3 point by a RigidTransform.</summary>
         /// <param name="a">The RigidTransform.</param>
         /// <param name="pos">The position to transform.</param>
-        /// <returns>The transformed position.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The transformed position.</returns>  
         public static float3 transform(RigidTransform a, float3 pos)
         {
             return mul(a.rot, pos) + a.pos;
@@ -392,8 +357,7 @@ namespace Unity.Mathematics
 
         /// <summary>Returns a uint hash code of a RigidTransform.</summary>
         /// <param name="t">The RigidTransform to hash.</param>
-        /// <returns>The hash code of the input RigidTransform</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The hash code of the input RigidTransform</returns>  
         public static uint hash(RigidTransform t)
         {
             return hash(t.rot) + 0xC5C5394Bu * hash(t.pos);
@@ -405,8 +369,7 @@ namespace Unity.Mathematics
         /// that are only reduced to a narrow uint hash at the very end instead of at every step.
         /// </summary>
         /// <param name="t">The RigidTransform to hash.</param>
-        /// <returns>The uint4 wide hash code.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>The uint4 wide hash code.</returns>  
         public static uint4 hashwide(RigidTransform t)
         {
             return hashwide(t.rot) + 0xC5C5394Bu * hashwide(t.pos).xyzz;

@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using Unity.IL2CPP.CompilerServices;
-using static Unity.Mathematics.math;
+using Unity.Mathematics;
 
 namespace Unity.Mathematics.Geometry
 {
@@ -44,8 +44,7 @@ namespace Unity.Mathematics.Geometry
         /// to create the AABB.
         /// </remarks>
         /// <param name="min">Minimum point inside AABB.</param>
-        /// <param name="max">Maximum point inside AABB.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="max">Maximum point inside AABB.</param> 
         public MinMaxAABB(float3 min, float3 max)
         {
             Min = min;
@@ -61,8 +60,7 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         /// <param name="center">Center of AABB.</param>
         /// <param name="extents">Full extents of AABB.</param>
-        /// <returns>AABB created from inputs.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>AABB created from inputs.</returns> 
         public static MinMaxAABB CreateFromCenterAndExtents(float3 center, float3 extents)
         {
             return CreateFromCenterAndHalfExtents(center, extents * 0.5f);
@@ -77,8 +75,7 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         /// <param name="center">Center of AABB.</param>
         /// <param name="halfExtents">Half extents of AABB.</param>
-        /// <returns>AABB created from inputs.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>AABB created from inputs.</returns> 
         public static MinMaxAABB CreateFromCenterAndHalfExtents(float3 center, float3 halfExtents)
         {
             return new MinMaxAABB(center - halfExtents, center + halfExtents);
@@ -90,7 +87,10 @@ namespace Unity.Mathematics.Geometry
         /// <remarks>
         /// Extents is the componentwise distance between min and max.
         /// </remarks>
-        public float3 Extents => Max - Min;
+        public float3 Extents
+        {
+            get { return Max - Min; }
+        }
 
         /// <summary>
         /// Computes the half extents of the AABB.
@@ -99,12 +99,18 @@ namespace Unity.Mathematics.Geometry
         /// HalfExtents is half of the componentwise distance between min and max. Subtracting HalfExtents from Center
         /// gives Min and adding HalfExtents to Center gives Max.
         /// </remarks>
-        public float3 HalfExtents => (Max - Min) * 0.5f;
+        public float3 HalfExtents
+        {
+            get { return (Max - Min) * 0.5f; }
+        }
 
         /// <summary>
         /// Computes the center of the AABB.
         /// </summary>
-        public float3 Center => (Max + Min) * 0.5f;
+        public float3 Center
+        {
+            get { return (Max + Min) * 0.5f; }
+        }
 
         /// <summary>
         /// Check if the AABB is valid.
@@ -113,7 +119,10 @@ namespace Unity.Mathematics.Geometry
         /// An AABB is considered valid if <see cref="Min"/> is componentwise less than or equal to <see cref="Max"/>.
         /// </remarks>
         /// <returns>True if <see cref="Min"/> is componentwise less than or equal to <see cref="Max"/>.</returns>
-        public bool IsValid => math.all(Min <= Max);
+        public bool IsValid
+        {
+            get { return math.all(Min <= Max); }
+        }
 
         /// <summary>
         /// Computes the surface area for this axis aligned bounding box.
@@ -131,24 +140,27 @@ namespace Unity.Mathematics.Geometry
         /// Tests if the input point is contained by the AABB.
         /// </summary>
         /// <param name="point">Point to test.</param>
-        /// <returns>True if AABB contains the input point.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool Contains(float3 point) => math.all(point >= Min & point <= Max);
+        /// <returns>True if AABB contains the input point.</returns> 
+        public bool Contains(float3 point)
+        {
+            return math.all(point >= Min & point <= Max);
+        }
 
         /// <summary>
         /// Tests if the input AABB is contained entirely by this AABB.
         /// </summary>
         /// <param name="aabb">AABB to test.</param>
-        /// <returns>True if input AABB is contained entirely by this AABB.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool Contains(MinMaxAABB aabb) => math.all((Min <= aabb.Min) & (Max >= aabb.Max));
+        /// <returns>True if input AABB is contained entirely by this AABB.</returns> 
+        public bool Contains(MinMaxAABB aabb)
+        {
+            return math.all((Min <= aabb.Min) & (Max >= aabb.Max));
+        }
 
         /// <summary>
         /// Tests if the input AABB overlaps this AABB.
         /// </summary>
         /// <param name="aabb">AABB to test.</param>
-        /// <returns>True if input AABB overlaps with this AABB.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>True if input AABB overlaps with this AABB.</returns> 
         public bool Overlaps(MinMaxAABB aabb)
         {
             return math.all(Max >= aabb.Min & Min <= aabb.Max);
@@ -160,8 +172,7 @@ namespace Unity.Mathematics.Geometry
         /// <remarks>
         /// Positive distance expands the AABB while negative distance shrinks the AABB.
         /// </remarks>
-        /// <param name="signedDistance">Signed distance to expand the AABB with.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="signedDistance">Signed distance to expand the AABB with.</param> 
         public void Expand(float signedDistance)
         {
             Min -= signedDistance;
@@ -176,8 +187,7 @@ namespace Unity.Mathematics.Geometry
         /// then this AABB doesn't change.
         /// </remarks>
         /// <seealso cref="Contains(Unity.Mathematics.Geometry.MinMaxAABB)"/>
-        /// <param name="aabb">AABB to encapsulate.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="aabb">AABB to encapsulate.</param> 
         public void Encapsulate(MinMaxAABB aabb)
         {
             Min = math.min(Min, aabb.Min);
@@ -192,21 +202,18 @@ namespace Unity.Mathematics.Geometry
         /// then this AABB doesn't change.
         /// </remarks>
         /// <seealso cref="Contains(Unity.Mathematics.float3)"/>
-        /// <param name="point">Point to encapsulate.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="point">Point to encapsulate.</param> 
         public void Encapsulate(float3 point)
         {
             Min = math.min(Min, point);
             Max = math.max(Max, point);
         }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+ 
         public bool Equals(MinMaxAABB other)
         {
             return Min.Equals(other.Min) && Max.Equals(other.Max);
         }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+ 
         public override string ToString()
         {
             return string.Format("MinMaxAABB({0}, {1})", Min, Max);
@@ -223,8 +230,7 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         /// <param name="transform">Transform to apply to AABB.</param>
         /// <param name="aabb">AABB to be transformed.</param>
-        /// <returns>Transformed AABB.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Transformed AABB.</returns> 
         public static MinMaxAABB Transform(RigidTransform transform, MinMaxAABB aabb)
         {
             float3 halfExtentsInA = aabb.HalfExtents;
@@ -250,8 +256,7 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         /// <param name="transform">Transform to apply to AABB.</param>
         /// <param name="aabb">AABB to be transformed.</param>
-        /// <returns>Transformed AABB.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Transformed AABB.</returns> 
         public static MinMaxAABB Transform(float4x4 transform, MinMaxAABB aabb)
         {
             var transformed = Transform(new float3x3(transform), aabb);
@@ -268,8 +273,7 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         /// <param name="transform">Transform to apply to AABB.</param>
         /// <param name="aabb">AABB to be transformed.</param>
-        /// <returns>Transformed AABB.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Transformed AABB.</returns> 
         public static MinMaxAABB Transform(float3x3 transform, MinMaxAABB aabb)
         {
             // From Christer Ericson's Real-Time Collision Detection on page 86 and 87.
@@ -290,32 +294,32 @@ namespace Unity.Mathematics.Geometry
             // (or max). For instance, to find the new minimum contributed by the original min and max x component, we
             // compute this:
             //
-            // newMin.x = min(c0.x * Min.x, c0.x * Max.x);
-            // newMin.y = min(c0.y * Min.x, c0.y * Max.x);
-            // newMin.z = min(c0.z * Min.x, c0.z * Max.x);
+            // newMin.x = math.min(c0.x * Min.x, c0.x * Max.x);
+            // newMin.y = math.min(c0.y * Min.x, c0.y * Max.x);
+            // newMin.z = math.min(c0.z * Min.x, c0.z * Max.x);
             //
             // Then we add minimum contributed by the original min and max y components:
             //
-            // newMin.x += min(c1.x * Min.y, c1.x * Max.y);
-            // newMin.y += min(c1.y * Min.y, c1.y * Max.y);
-            // newMin.z += min(c1.z * Min.y, c1.z * Max.y);
+            // newMin.x += math.min(c1.x * Min.y, c1.x * Max.y);
+            // newMin.y += math.min(c1.y * Min.y, c1.y * Max.y);
+            // newMin.z += math.min(c1.z * Min.y, c1.z * Max.y);
             //
             // And so on. Translation can be handled by simply initializing the new min and max with the translation
             // amount since it does not affect the min and max bounds in local space.
             var t1 = transform.c0.xyz * aabb.Min.xxx;
             var t2 = transform.c0.xyz * aabb.Max.xxx;
             var minMask = t1 < t2;
-            var transformed = new MinMaxAABB(select(t2, t1, minMask), select(t2, t1, !minMask));
+            var transformed = new MinMaxAABB(math.select(t2, t1, minMask), math.select(t2, t1, !minMask));
             t1 = transform.c1.xyz * aabb.Min.yyy;
             t2 = transform.c1.xyz * aabb.Max.yyy;
             minMask = t1 < t2;
-            transformed.Min += select(t2, t1, minMask);
-            transformed.Max += select(t2, t1, !minMask);
+            transformed.Min += math.select(t2, t1, minMask);
+            transformed.Max += math.select(t2, t1, !minMask);
             t1 = transform.c2.xyz * aabb.Min.zzz;
             t2 = transform.c2.xyz * aabb.Max.zzz;
             minMask = t1 < t2;
-            transformed.Min += select(t2, t1, minMask);
-            transformed.Max += select(t2, t1, !minMask);
+            transformed.Min += math.select(t2, t1, minMask);
+            transformed.Max += math.select(t2, t1, !minMask);
             return transformed;
         }
     }

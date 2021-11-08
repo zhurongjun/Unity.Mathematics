@@ -35,8 +35,7 @@ namespace Unity.Mathematics.Geometry
         /// <param name="coefficientA">Coefficient A from plane equation.</param>
         /// <param name="coefficientB">Coefficient B from plane equation.</param>
         /// <param name="coefficientC">Coefficient C from plane equation.</param>
-        /// <param name="coefficientD">Coefficient D from plane equation.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="coefficientD">Coefficient D from plane equation.</param> 
         public Plane(float coefficientA, float coefficientB, float coefficientC, float coefficientD)
         {
             NormalAndDistance = Normalize(new float4(coefficientA, coefficientB, coefficientC, coefficientD));
@@ -50,8 +49,7 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         /// <param name="normal">A non-zero vector that is perpendicular to the plane.  It may be any length.</param>
         /// <param name="distance">Distance from the origin along the normal.  A negative value moves the plane in the
-        /// same direction as the normal while a positive value moves it in the opposite direction.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// same direction as the normal while a positive value moves it in the opposite direction.</param> 
         public Plane(float3 normal, float distance)
         {
             NormalAndDistance = Normalize(new float4(normal, distance));
@@ -64,8 +62,7 @@ namespace Unity.Mathematics.Geometry
         /// The constructed plane will be the normalized form of the plane specified by the inputs.
         /// </remarks>
         /// <param name="normal">A non-zero vector that is perpendicular to the plane.  It may be any length.</param>
-        /// <param name="pointInPlane">A point that lies in the plane.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="pointInPlane">A point that lies in the plane.</param> 
         public Plane(float3 normal, float3 pointInPlane)
         : this(normal, -math.dot(normal, pointInPlane))
         {
@@ -79,8 +76,7 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         /// <param name="vector1InPlane">A non-zero vector that lies in the plane.  It may be any length.</param>
         /// <param name="vector2InPlane">A non-zero vector that lies in the plane.  It may be any length and must not be a scalar multiple of <paramref name="vector1InPlane"/>.</param>
-        /// <param name="pointInPlane">A point that lies in the plane.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <param name="pointInPlane">A point that lies in the plane.</param> 
         public Plane(float3 vector1InPlane, float3 vector2InPlane, float3 pointInPlane)
         : this(math.cross(vector1InPlane, vector2InPlane), pointInPlane)
         {
@@ -96,8 +92,7 @@ namespace Unity.Mathematics.Geometry
         /// <param name="unitNormal">A non-zero vector that is perpendicular to the plane.  It must be unit length.</param>
         /// <param name="distance">Distance from the origin along the normal.  A negative value moves the plane in the
         /// same direction as the normal while a positive value moves it in the opposite direction.</param>
-        /// <returns>Normalized Plane constructed from given inputs.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Normalized Plane constructed from given inputs.</returns> 
         public static Plane CreateFromUnitNormalAndDistance(float3 unitNormal, float distance)
         {
             return new Plane { NormalAndDistance = new float4(unitNormal, distance) };
@@ -112,8 +107,7 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         /// <param name="unitNormal">A non-zero vector that is perpendicular to the plane.  It must be unit length.</param>
         /// <param name="pointInPlane">A point that lies in the plane.</param>
-        /// <returns>Normalized Plane constructed from given inputs.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Normalized Plane constructed from given inputs.</returns> 
         public static Plane CreateFromUnitNormalAndPointInPlane(float3 unitNormal, float3 pointInPlane)
         {
             return new Plane { NormalAndDistance = new float4(unitNormal, -math.dot(unitNormal, pointInPlane)) };
@@ -128,8 +122,8 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         public float3 Normal
         {
-            get => NormalAndDistance.xyz;
-            set => NormalAndDistance.xyz = value;
+            get { return NormalAndDistance.xyz; }
+            set { NormalAndDistance.xyz = value; }
         }
 
         /// <summary>
@@ -141,16 +135,15 @@ namespace Unity.Mathematics.Geometry
         /// </remarks>
         public float Distance
         {
-            get => NormalAndDistance.w;
-            set => NormalAndDistance.w = value;
+            get { return NormalAndDistance.w; }
+            set { NormalAndDistance.w = value; }
         }
 
         /// <summary>
         /// Normalizes the given Plane.
         /// </summary>
         /// <param name="plane">Plane to normalize.</param>
-        /// <returns>Normalized Plane.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Normalized Plane.</returns> 
         public static Plane Normalize(Plane plane)
         {
             return new Plane { NormalAndDistance = Normalize(plane.NormalAndDistance) };
@@ -163,8 +156,7 @@ namespace Unity.Mathematics.Geometry
         /// The plane coefficients are A, B, C, D and stored in that order in the <see cref="float4"/>.
         /// </remarks>
         /// <param name="planeCoefficients">Plane coefficients A, B, C, D stored in x, y, z, w (respectively).</param>
-        /// <returns>Normalized plane coefficients.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Normalized plane coefficients.</returns> 
         public static float4 Normalize(float4 planeCoefficients)
         {
             float recipLength = math.rsqrt(math.lengthsq(planeCoefficients.xyz));
@@ -181,8 +173,7 @@ namespace Unity.Mathematics.Geometry
         /// comparison instead.
         /// </remarks>
         /// <param name="point">Point to find the signed distance with.</param>
-        /// <returns>Signed distance of the point from the plane.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Signed distance of the point from the plane.</returns> 
         public float SignedDistanceToPoint(float3 point)
         {
             CheckPlaneIsNormalized();
@@ -197,8 +188,7 @@ namespace Unity.Mathematics.Geometry
         /// that still lies in the plane.
         /// </remarks>
         /// <param name="point">Point to project onto the plane.</param>
-        /// <returns>Projected point that's inside the plane.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// <returns>Projected point that's inside the plane.</returns> 
         public float3 Projection(float3 point)
         {
             CheckPlaneIsNormalized();
@@ -208,15 +198,20 @@ namespace Unity.Mathematics.Geometry
         /// <summary>
         /// Flips the plane so the normal points in the opposite direction.
         /// </summary>
-        public Plane Flipped => new Plane { NormalAndDistance = -NormalAndDistance };
+        public Plane Flipped
+        {
+            get { return new Plane { NormalAndDistance = -NormalAndDistance }; }
+        }
 
         /// <summary>
         /// Implicitly converts a <see cref="Plane"/> to <see cref="float4"/>.
         /// </summary>
         /// <param name="plane">Plane to convert.</param>
-        /// <returns>A <see cref="float4"/> representing the plane.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator float4(Plane plane) => plane.NormalAndDistance;
+        /// <returns>A <see cref="float4"/> representing the plane.</returns> 
+        public static implicit operator float4(Plane plane)
+        {
+            return plane.NormalAndDistance;
+        }
 
         [Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
         void CheckPlaneIsNormalized()
