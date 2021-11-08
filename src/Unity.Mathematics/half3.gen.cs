@@ -1132,6 +1132,26 @@ namespace Unity.Mathematics
 
 
 
+        /// <summary>Returns the half element at a specified index.</summary>
+        unsafe public half this[int index]
+        {
+            get
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 3)
+                    throw new System.ArgumentException("index must be between[0...2]");
+#endif
+                fixed (half3* array = &this) { return ((half*)array)[index]; }
+            }
+            set
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 3)
+                    throw new System.ArgumentException("index must be between[0...2]");
+#endif
+                fixed (half* array = &x) { array[index] = value; }
+            }
+        }
 
         /// <summary>Returns true if the half3 is equal to a given half3, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>

@@ -392,6 +392,26 @@ namespace Unity.Mathematics
 
 
 
+        /// <summary>Returns the bool element at a specified index.</summary>
+        unsafe public bool this[int index]
+        {
+            get
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 2)
+                    throw new System.ArgumentException("index must be between[0...1]");
+#endif
+                fixed (bool2* array = &this) { return ((bool*)array)[index]; }
+            }
+            set
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 2)
+                    throw new System.ArgumentException("index must be between[0...1]");
+#endif
+                fixed (bool* array = &x) { array[index] = value; }
+            }
+        }
 
         /// <summary>Returns true if the bool2 is equal to a given bool2, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>

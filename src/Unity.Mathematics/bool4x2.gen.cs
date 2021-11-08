@@ -169,6 +169,26 @@ namespace Unity.Mathematics
 
 
 
+        /// <summary>Returns the bool4 element at a specified index.</summary>
+        unsafe public bool4 this[int index]
+        {
+            get
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 2)
+                    throw new System.ArgumentException("index must be between[0...1]");
+#endif
+                fixed (bool4x2* array = &this) { return ((bool4*)array)[index]; }
+            }
+            set
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 2)
+                    throw new System.ArgumentException("index must be between[0...1]");
+#endif
+                fixed (bool4* array = &c0) { array[index] = value; }
+            }
+        }
 
         /// <summary>Returns true if the bool4x2 is equal to a given bool4x2, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>

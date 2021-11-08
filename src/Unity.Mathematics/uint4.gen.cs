@@ -3321,6 +3321,26 @@ namespace Unity.Mathematics
 
 
 
+        /// <summary>Returns the uint element at a specified index.</summary>
+        unsafe public uint this[int index]
+        {
+            get
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 4)
+                    throw new System.ArgumentException("index must be between[0...3]");
+#endif
+                fixed (uint4* array = &this) { return ((uint*)array)[index]; }
+            }
+            set
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 4)
+                    throw new System.ArgumentException("index must be between[0...3]");
+#endif
+                fixed (uint* array = &x) { array[index] = value; }
+            }
+        }
 
         /// <summary>Returns true if the uint4 is equal to a given uint4, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>

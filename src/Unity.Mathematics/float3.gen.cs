@@ -1411,6 +1411,26 @@ namespace Unity.Mathematics
 
 
 
+        /// <summary>Returns the float element at a specified index.</summary>
+        unsafe public float this[int index]
+        {
+            get
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 3)
+                    throw new System.ArgumentException("index must be between[0...2]");
+#endif
+                fixed (float3* array = &this) { return ((float*)array)[index]; }
+            }
+            set
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 3)
+                    throw new System.ArgumentException("index must be between[0...2]");
+#endif
+                fixed (float* array = &x) { array[index] = value; }
+            }
+        }
 
         /// <summary>Returns true if the float3 is equal to a given float3, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>

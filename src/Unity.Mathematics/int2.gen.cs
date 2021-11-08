@@ -702,6 +702,26 @@ namespace Unity.Mathematics
 
 
 
+        /// <summary>Returns the int element at a specified index.</summary>
+        unsafe public int this[int index]
+        {
+            get
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 2)
+                    throw new System.ArgumentException("index must be between[0...1]");
+#endif
+                fixed (int2* array = &this) { return ((int*)array)[index]; }
+            }
+            set
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 2)
+                    throw new System.ArgumentException("index must be between[0...1]");
+#endif
+                fixed (int* array = &x) { array[index] = value; }
+            }
+        }
 
         /// <summary>Returns true if the int2 is equal to a given int2, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>

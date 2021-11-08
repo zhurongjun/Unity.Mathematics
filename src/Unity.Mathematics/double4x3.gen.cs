@@ -425,6 +425,26 @@ namespace Unity.Mathematics
 
 
 
+        /// <summary>Returns the double4 element at a specified index.</summary>
+        unsafe public double4 this[int index]
+        {
+            get
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 3)
+                    throw new System.ArgumentException("index must be between[0...2]");
+#endif
+                fixed (double4x3* array = &this) { return ((double4*)array)[index]; }
+            }
+            set
+            {
+#if ENABLE_UNITY_COLLECTIONS_CHECKS
+                if ((uint)index >= 3)
+                    throw new System.ArgumentException("index must be between[0...2]");
+#endif
+                fixed (double4* array = &c0) { array[index] = value; }
+            }
+        }
 
         /// <summary>Returns true if the double4x3 is equal to a given double4x3, false otherwise.</summary>
         /// <param name="rhs">Right hand side argument to compare equality with.</param>

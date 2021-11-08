@@ -587,6 +587,7 @@ namespace Unity.Mathematics.Mathematics.CodeGen
 
             str.Append("\n");
             // GenerateIndexOperator(str, isMatrix ? IndexerMode.ByRef : IndexerMode.ByValue);
+            GenerateIndexOperator(str, IndexerMode.ByValue);
 
             str.Append("\n");
             GenerateEquals(str);
